@@ -1,0 +1,402 @@
+\documentclass[12pt,a4paper,reqno]{amsart}
+\usepackage[utf8]{inputenc}  % Unixin merkistö
+\usepackage[T1]{fontenc}       % kirjaimet, joissa aksentteja (skandit)
+\usepackage[finnish]{babel}    % suomalaiset babel-makrot
+\usepackage{amsfonts}          % AMS-paketteja
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newtheorem{maar}{Määritelmä}[section]
+\newtheorem{huom}[maar]{Huomautus}
+\newtheorem{lause}[maar]{Lause}
+\newtheorem{lemma}[maar]{Lemma}
+\newtheorem{teoreema}[maar]{Teoreema}
+\newtheorem{esim}[maar]{Esimerkki}
+\newtheorem{korollaari}[maar]{Korollaari}
+\pagestyle{plain}
+ 
+\title{Kuratowskin upotuslause\\Kandintyö}
+\author{Pekka Keipi\\013592712} 
+ 
+\begin{document}
+ 
+\maketitle
+\newpage
+\section{Funktion rajoittuma, normi ja sup-normi}
+\begin{maar}
+%\emph{Vektoriavaruus}
+Vektoriavaruus\\
+\emph{
+Joukko $V$ on $\R$-kertoiminen vektoriavaruus, jos kaikkiin $v,w\in V$ ja $a\in \R$ on liitetty yksikäsitteinen summa $v+w\in V$ ja tulo $av\in V$ niin, että seuraavat ominaisuudet ovat voimassa:
+\begin{itemize}
+\item[i)\phantom{iiv}] $(u+v)+w=u+(v+w)\text{ kaikilla }u,v,w\in V.$
+\item[ii)\phantom{iv}] $v+w=w+v\text{ kaikilla }v,w\in V.$
+\item[iii)\phantom{v}] On olemassa sellainen $0=0_{v},$ että $v+0=v\text{ kaikilla }v\in V.$
+\item[iv)\phantom{ii}] Jokaiseen $v\in V $ liittyy sellainen $-v\in V$, että $v+(-v)=0$.
+\item[v)\phantom{iii}] $a(v+w)=av+aw\text{ kaikilla }a\in\R, v,w\in V.$
+\item[vi)\phantom{ii}] $(a+b)v=av+bv\text{ kaikilla }a,b\in\R, v\in V.$
+\item[vii)\phantom{i}] $a(bv)=(ab)v\text{ kaikilla }a,b\in\R, v\in V.$
+\item[viii)] $1_{v}=v$ kaikilla $v\in V.$
+\end{itemize}
+Tässä avaruuden $V$ alkioita kutsutaan vektoreiksi ja avaruuden $\R$ alkioita skalaareiksi.
+}
+\end{maar}
+%\begin{esim}Tärkein esimerkki vektoriavaruuksista on euklidinen avaruus $\R^n$, jossa luku $n\in \N$ on avaruuden ulottuvuus.\end{esim}
+\begin{maar}
+Vektorialiavaruus\\
+\emph{
+Osajoukko $W\in V$ on vektoriavaruuden $V$ (vektori)aliavaruus, jos
+\begin{itemize}
+\item[i)\phantom{iiv}] $v+w\in W\text{ kaikilla }v,w\in W,$
+\item[ii)\phantom{iv}] $av\in W\text{ kaikilla }a\in\R, v\in W$ ja
+\item[iii)\phantom{v}] $0_{v}\in W$
+\end{itemize}
+}
+\end{maar}
+\begin{maar}
+Rajoitettu funktio\\
+\emph{
+Olkoon $D$ avaruus ja $F(D,\R)$ kaikkien avaruudessa $D$ määriteltyjen reaaliarvoisten funktioiden $f\colon D\rightarrow \R$ joukko. Funktio $f\colon D\rightarrow \R$ on rajoitettu, jos on olemassa sellainen $M\in\R,M\geq 0$, jolla $|f(x)|\leq M$ kaikilla $x\in D$.\\\\
+%Rajoitettujen funktioiden avaruutta $\cup f, f\colon  $
+Rajoitettujen funktioiden avaruus $Raj(D,\R )$ koostuu kaikista rajoitetuista funktioista $f\colon D\rightarrow \R $.
+}
+\end{maar}
+\begin{lemma}
+%Olkoon $D$ avaruus ja $F(D,\R)$ avaruuden $D$ reaaliarvoisten funktioiden avaruus. Tällöin r
+Rajoitettujen funktioiden avaruus $Raj(D,\R )$ on reaaliarvoisten funktioiden joukon $F(D,\R)$ aliavaruus.
+\end{lemma}
+%\noindent
+\emph{Todistus.} Olkoon $f,g\in Raj(D,\R),M,N\in\R, M,N\geq 0$ niin, että $|f(x)|\leq M$ ja $|g(x)|\leq N$ kaikilla $x\in D$. Tällöin seuraavat kohdat pätevät: 
+\begin{itemize}
+\item[i)\phantom{iiv}] $|f(x)|+|g(x)|\leq M+N\leq\infty$, siis $f+g\in Raj(D,\R)$ kaikilla $f,g\in Raj(D,\R),$
+\item[ii)\phantom{iv}] $|af(x)|\leq a\cdot M\leq\infty$, siis $af\in Raj(D,\R)$ kaikilla $a\in\R, f\in Raj(D,\R)$ ja
+\item[iii)\phantom{v}] $0_{F(D,\R)}(x)=0$ kaikilla $x\in D$, jolloin $0_{F(D,\R)} \in Raj(D,\R )$.
+\end{itemize}
+
+\begin{maar} Normi\\
+\emph{
+Olkoon $E$ vektoriavaruus ja $|\cdot|\colon E\rightarrow \R_+$, $x\mapsto|x|$ kuvaus joukossa $E$. %Kuvaus $|\cdot|$ liittää jokaiseen joukon $E$ alkioon $x\in E$ reaaliluvun $|x|\geq 0$.
+Kuvaus $|\cdot|$ on normi avaruudessa $E$, jos seuraavat ominaisuudet pätevät kaikilla $ x,y\in E, a\in\R$.
+\begin{itemize}
+\item[(N1)]$|x+y|\leq |x|+|y|$,
+\item[(N2)]$|ax|=|a||x|$,
+\item[(N3)]Jos $|x|=0$, niin $x=\bar{0}$.
+\end{itemize} 
+Vektoriavaruutta, jossa on annettu jokin normi, sanotaan normiavaruudeksi.
+}
+\end{maar} 
+
+\begin{esim}
+\emph{
+Olkoon $\R ^n$ joukko, jossa määritellään tavallinen euklidinen normi $|x| = \sqrt{x^{2}_{1} + \cdots +x^{2}_{n}}$.
+}
+\end{esim}
+
+\begin{maar} Sup-normi\\
+\emph{
+Olkoon $D$ epätyhjä avaruus ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. Yhtälö $||f||=\sup\{|f(x)|\colon x\in D\}$ määrittelee normin avaruudessa $Raj(D,\R )$. %Normia $||\cdot||$ 
+Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
+}
+\end{maar} 
+\emph{Todistus.} 
+\begin{itemize}
+\item[(N1)] Olkoon $f,g\in Raj(D,\R )$ ja $x\in D$. Tällöin
+\begin{equation*}
+|f+g|(x)=|f(x)+g(x)|\leq|f(x)+g(x)|\leq||f||+||g||
+\end{equation*}
+kaikilla $x\in D$, joten $||f+g||\leq||f||+||g||$.
+
+\item[(N2)] Olkoon $f\in Raj(D,\R )$ ja $x\in D$. Tällöin
+\begin{equation*}
+%\label{N2todistus1}
+|af|(x)=|af(x)|=|a||f(x)|\leq|a|||f||
+\end{equation*}
+kaikilla $x\in D$, joten $||af||\leq|a|||f||$. Jos $a=0$, niin (N2) pätee muodossa $0=0$. %$$||af||=||0\cdot f||=0=|0|||f||=|a|||f||.$$ 
+Jos $a\neq 0$, niin $f=a^{-1}af$ ja edellisen
+%yhtälön $\ref{N2todistus1}$ 
+mukaan $||f||\leq|a^{-1}|||af||$
+%$$|f|(x)=|a^{-1}af|(x)=|a^{-1}af(x)|=|a^{-1}||af(x)|\leq|a^{-1}|||af(x)||.$$
+ja edelleen $||af||\geq|a|||f||$ kaikilla $x\in D$. Tällöin siis $||af||=|a|||f||$.
+
+\item[(N3)]Jos $||f||=0$, niin $|f(x)|=0$ kaikilla $x\in D$, eli  $f=\bar{0}$.
+\end{itemize} 
+
+\begin{esim}
+\emph{
+Tapauksessa $D=\N$ saadaan kaikkien rajoitettujen jonojen joukko $raj(\N,\R).$ Joukon alkioita ovat rajoitetut jonot $x=(x_1,x_2,\dots).$ Tälle joukolle käytetään usein merkintää $l_\infty$.
+}
+\end{esim}
+
+
+\newpage
+\section{Metrinen avaruus}
+\begin{maar} Metrinen avaruus \emph{on pari $(X,d)$, jossa $X$ on joukko ja $d$ on \emph{metriikka} joukossa $X$.
+Tällöin $d\colon X\times X\rightarrow \R_+$ on kuvaus, jolle pätee seuraavat ominaisuudet kaikilla $x,y,z\in X$:
+\begin{itemize}
+\item[(M1)]$d(x,z)\leq d(x,y)+d(y,z)$
+\item[(M2)]$d(x,y)=d(y,x)$
+\item[(M3)]$d(x,y)=0$, jos ja vain jos $x=y$.
+\end{itemize} }
+\end{maar} 
+
+\begin{esim}\emph{
+Euklidinen metriikka avaruuden $\R^n$ kahden pisteen $p=(p_1,p_2,\dots,p_n)$ ja $q=(q_1,q_2,\dots,q_n)$ välillä on määritelty $d(p,q)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+\dots+(p_n-q_n)^2}$.}
+\end{esim}
+
+\begin{esim}\emph{
+Normiavaruus on aina metrinen avaruus. 
+}\\
+Todistus.
+\emph{Olkoon $E$ normiavaruus ja $x,y\in E$. 
+Metriikaksi voidaan valita $d(x,y)=|x-y|$, jolloin kaikilla $x,y\in E$ pätee
+\begin{itemize}
+\item[(M1)]%\begin{align*}
+$(x,y)=|x-y|=|x+(-y)|\leq|x|+|(-y)|=|x+0|+|0+y|$\\
+%\phantom{(x,y)}
+$= d(x,0)+d(0,y)$
+%(x,y)=&|x-y|=|x+(-y)|\leq|x|+|(-y)|=|x+0|+|0+y|\\=& d(x,0)+d(0,y)
+%\end{align*}
+\item[(M2)]$d(x,y)=|x-y|=|y-x|=d(y,x)$
+\item[(M3)]$d(x,y)=|x-y|=0$, jos ja vain jos $x=y$.
+\end{itemize}
+}
+\end{esim}
+\begin{maar}Joukkojen välinen etäisyys\\
+\emph{Olkoon $(X,d)$ metrinen avaruus ja $A,B\subset X$. Tällöin etäisyys osajoukkojen $A$ ja $B$ välillä on määritelty $d(A,B)=\inf\{d(a,b)\colon a\in A, b\in B\}$, eli etäisyyksien $d(a,b)$ suurin alaraja, kun $a\in A$ ja $b\in B$. }\\
+\\
+\emph{Tällöin pätee $d(A,B)\geq 0$ ja jos $A= \emptyset$ tai $B= \emptyset$, niin $d(A,B)= 0$. 
+}
+\end{maar}
+\begin{lause}
+\emph{Olkoon $(X,d)$ metrinen avaruus, $x,y\in X$ ja $A\subset X$ epätyhjä. Tällöin $|d(x,A)-d(y,A)|\leq d(x,y)$. Erityisesti $|d(x,z)-d(y,z)|\leq d(x,y)$ kaikilla $z\in X$}\\
+\\
+Todistus. %\emph{Aputulos: $b+\inf\{a\in A\}=\inf\{b+a\colon a\in A\}$}\\
+\emph{Olkoon $a\in A$. Tällöin kaikilla $y\in A$ pätee $d(x,A)\leq d(x,a)\leq d(x,y)+d(y,a)$. Ottamalla infimum kaikkien $a\in A$ yli saadaan $d(x,A)\leq d(x,y)+d(y,A)$
+%\begin{equation*}\begin{split} d(x,A)=&\inf\{d(x,b)\colon b\in A\}\leq\inf\{d(x,y)+d(y,b)\colon b\in A\}\\=&d(x,y)+\inf\{d(y,b)\colon b\in A\}=d(x,y)+d(y,A)\end{split}\end{equation*}
+ja edelleen $d(x,A)-d(y,A)\leq d(x,y) $.
+Vastaavasti olkoon $y\in A$, jolloin kaikilla $x\in X$ pätee $d(y,A)-d(x,A)\leq d(y,x)=d(x,y) $. Nyt $d(x,A)-d(y,A)\leq d(x,y) $ ja $d(y,A)-d(x,A)\leq d(x,y) $, jolloin siis $|d(x,A)-d(y,A)|\leq d(x,y) $.
+}
+\end{lause}
+
+\begin{maar} Homeomorfismi \emph{tarkoittaa kuvausta $f\colon X\rightarrow Y$, jolla 
+\begin{itemize}
+\item[(1)] $f$ on bijektio,
+\item[(2)] $f$ on jatkuva,
+\item[(3)] $f^{-1} \colon Y\rightarrow X$ on jatkuva. 
+\end{itemize}
+}
+\end{maar}
+
+\begin{maar}Upotus \emph{tarkoittaa kuvausta $f\colon X\rightarrow Y$, joka määrittelee homeomorfismin $f_1\colon X\rightarrow f[X]$, jolla $f_1(x)=f(x)$ kaikilla $x\in X$. %Tällöin funktiolla $f$ pätee seuraavat ehdot:
+%\begin{itemize}
+%\item[(1)] $f$ on injektio,
+%\item[(2)] $f$ on jatkuva,
+%\item[(3)] $f^{-1} \colon f[X]\rightarrow X$ on jatkuva. 
+%\end{itemize}
+}
+\end{maar}
+\begin{maar}Isometria \emph{on etäisyydet säilyttävä kuvaus. Olkoon $(X,d)$ ja $(X',d')$ metrisiä avaruuksia. %Avaruudet $(X,d)$ ja $(X',d')$ ovat isometrisiä,
+Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos ja vain jos $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$.
+}
+\end{maar}
+%\begin{lemma}
+%Isometria on aina myös upotus. \\
+%\\
+%Todistus.\emph{ Olkoon $(X,d)$ ja $(X',d')$ metrisiä avaruuksia ja kuvaus $h\colon X\rightarrow X'$ isometria. Tällöin $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$.
+%\begin{itemize}
+%\item[(1)] $h$ on bijektio,
+%\item[(2)] $h$ on jatkuva,
+%\item[(3)] $h^{-1} \colon X'\rightarrow X$ on jatkuva. 
+%\end{itemize}
+%}
+%\end{lemma}
+\begin{esim}\emph{
+Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruudessa $\R^2$.}
+\end{esim}
+\newpage
+\section{Konveksi verho}
+\begin{maar}%%Konveksi joukko sisältää kaikkien alkioidensa väliset janapolut. 
+Konveksius. \emph{Olkoon $E$ normiavaruus, $A\subset E$ ja $a,b\in A$. Yhtälö 
+$$\alpha (t)=a+t(b-a)=(1-t)a+tb$$ 
+määrittelee janapolun $\alpha \colon [0,1]\rightarrow E$. Kuvajoukko $\alpha [0,1] = [a,b]$ on jana, jonka päätepisteet ovat $\alpha (0)=a\in A$ ja $\alpha (1)=b\in A$. 
+% Merkitään $\alpha I = [a,b]$. 
+Joukko $A\subset E$ on konveksi, jos ja vain jos $[a,b]\subset A$ kaikilla $a,b\in A$ 
+%Jos $[a,b]\in A$, niin joukko $A$ on konveksi.%aina kun $a,b\in A$.
+}
+\end{maar}
+\begin{maar}Konveksi verho. \emph{Olkoon $E$ normiavaruus, $A\subset E$ ja $(A_j)_{j\in J}\subset \mathcal{P}(E)$ 
+kaikkien sellaisten konveksien osajoukkojen muodostama perhe, joilla %joukko $A_k$ konveksi ja 
+$A\subset A_k$ kaikilla $k\in J$. Tällöin joukko $C(A)=\bigcap_{j\in J} A_j$ on joukon $A$ konveksi verho. }
+\end{maar}
+\begin{lemma} \emph{Konveksi verho $C(A)$ on konveksi}.\end{lemma} 
+\emph{Todistus.} Olkoon $a,b\in C(A)=\bigcap_{j\in J} A_j$. Tällöin $a,b\in A_i$ kaikilla $i\in J$ ja koska erityisesti jokainen $A_i$ on konveksi täytyy myös päteä $[a,b]\in A_i$ kaikilla $i\in J$. Siis konveksi verho $C(A)$ on konveksi.%%Tästä seuraa, että konveksi verho $C(A)$ on konveksi. \end{korollaari}
+\begin{korollaari}\emph{Konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.}
+\end{korollaari}
+%%Tällöin koska $C(A)=\bigcap_{j\in J} A_j$, niin $C(A)\subset A_i$ kaikilla $i\in J$. Tällöin konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.
+\emph{Todistus.} Olkoon $B$ sellainen konveksi joukko, jolla $A\subset B\subset C(A)$. Joukko $B$ on konveksi ja $A\subset B$, joten $B\in (A_j)_{j\in J}$. Tällöin\\ $C(A)=\bigcap_{j\in J} A_j\subset B$, sillä $C(A)\subset A_i$ kaikilla $i\in J$. Siis $B\subset C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$
+
+\begin{lemma} \emph{Olkoon $E$ normiavaruus ja $A\subset E$. Tällöin joukon $A$ konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista. }
+\end{lemma}
+
+\emph{Todistus.} 
+Olkoon $x_0,x_1,\cdots, x_n, x_{n+1} \in A$, $a,\lambda_0,\lambda_1,\cdots, \lambda_n, \lambda_{n+1} \in \R$ ja $a,\lambda_i\geq 0$ kaikilla $ i\in\N$. Konveksiuden nojalla 
+%$a x_1+b x_2 \in C(A)$, kun $a +b =1$. 
+$\lambda_0 x_0+\lambda_1 x_1 \in C(A)$, kun $\lambda_0 +\lambda_1=1$.
+%Edelleen $\lambda_1 (ax_1+b x_2)+\lambda_2 x_3 \in C(A)$, kun $\lambda_1 +\lambda_2 =1$ ja $a+b=1$. 
+%ja edelleen $a (\lambda_0 x_0+\lambda_1 x_1)+\lambda_2 x_2=a\lambda_0 x_0+a\lambda_1  x_1+\lambda_2 x_2 \in C(A)$, kun $\lambda_0 +\lambda_1 =1$ ja $a+\lambda_2=1$, eli kun $a\lambda_0+a\lambda_1+\lambda_2=a(\lambda_0+\lambda_1)+\lambda_2=a+\lambda_2=1$. 
+Oletetaan, että jollain $n\geq 1$ 
+\begin{equation*}
+\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}\in C(A), \text{kun } \lambda_0+\lambda_1+\cdots+ \lambda_{n} =1.
+ \end{equation*}
+%\begin{equation*}\begin{split} &x_1+\lambda_2 x_2+\cdots+\lambda_{n-1} x_{n-1}\in C(A), \\ &\text{kun } \lambda_0+\lambda_1+\cdots+ \lambda_{n-1} =1. \end{split} \end{equation*}
+Tällöin myös
+\begin{equation*}
+\begin{split}
+&a(\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n}x_n)+\lambda_{n+1} x_{n+1}\\=&a\lambda_0 x_0+a\lambda_1 x_1+\cdots+a\lambda_{n}x_n+\lambda_{n+1} x_{n+1}
+\in C(A),
+\end{split}
+\end{equation*}
+%\text{ kun }a+ \lambda_{n+1} =1.
+%\end{equation*}
+%kun $a+ \lambda_{n+1} =1$, eli 
+kun 
+\begin{equation*}
+\begin{split}
+a\lambda_0+a\lambda_1+\cdots+ a\lambda_{n}+ \lambda_{n+1}=&a(\lambda_0+\lambda_1+\cdots+ \lambda_{n})+ \lambda_{n+1}\\=&a(1)+ \lambda_{n+1}=a+ \lambda_{n+1}=1.
+\end{split}
+\end{equation*} 
+Siis konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista.
+%Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\cdots, a_k \in A$, $\lambda_0,\lambda_1,\cdots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että $$\sum_{i=0}^n \in A \lambda_i f_{a_i}\qquad \text{ missä } \sum_{i=0}^n \lambda_i =1.$$
+%Tällöin $C(A)=\bigcap_{j\in J} A_j$ on pienin konveksi joukko, jolla $A\subset C(A)$, jolloin $C(A)$ on joukon $A$ konveksi verho.\\
+%convex hull = kaikkien A:n sisältävien konveksien joukkojen leikkaus -> konveksi ja sisältää A:n.
+
+
+\begin{maar}
+
+\end{maar}
+
+\newpage
+\section{Banachin avaruus}
+
+\begin{maar}Banachin avaruus on täydellinen normiavaruus.
+\end{maar}
+
+\begin{maar}Separoituva avaruus. \emph{Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\cdots\}=A\subset X$ niin, että jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.}
+\end{maar}
+
+
+\newpage
+\section{Kuratowskin upotuslause}
+\noindent 
+\begin{teoreema}
+Jokaista metristä avaruutta $(X,d)$ kohti on olemassa normiavaruus $Z$ ja upotus $h\colon X\rightarrow Z$ missä $ hX\subset Z$ on suljettu konveksissa verhossa $C(hX)$. 
+\end{teoreema} 
+ 
+\vspace{0.5cm}
+
+\noindent\emph{Todistus.} Olkoon $(X,d)$ metrinen avaruus. Tällöin myös
+$$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
+on metriikka joukossa $X$, sillä kaikilla $x,y,z\in X$:
+\begin{itemize}
+\item[(M1)]$d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}\leq \dfrac{d(x,y)+d(y,z)}{1+d(x,y)+d(y,z)}$
+$$= \dfrac{d(x,y)}{1+d(x,y)+d(y,z)}+ \dfrac{d(y,z)}{1+d(x,y)+d(y,z)}$$
+$$\leq \dfrac{d(x,y)}{1+d(x,y)}+ \dfrac{d(y,z)}{1+d(y,z)}=d'(x,y)+d'(y,z)$$
+\item[(M2)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=\dfrac{d(y,x)}{1+d(y,x)}=d'(y,x)$
+\item[(M3)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=0$, jos ja vain jos $d(x,y)=0$, eli jos ja vain jos $x=y$.
+\end{itemize} 
+Tällöin joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+
+Olkoon $Z$ joukon $X$ kaikkien rajoitettujen jatkuvien funktioiden joukko. Asetetaan
+$$|f_1|=\sup_{x\in X} |f_1(x)| \, , \qquad f_1\in Z$$
+ja
+$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in X} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
+
+Tällöin $Z$ on normiavaruus, sillä kaikilla $g_1,g_2\in Z, a\in \R$:
+\begin{itemize}
+\item[(N1)] $|g_1+g_2|=\sup_{x\in X} |g_1(x)+g_2(x)|\\
+\phantom{|g_1+g_2|} \leq \sup_{x\in X} |g_1(x)|+\sup_{x\in X} |g_2(x)|=|g_1|+|g_2|$
+%\[\begin{split}|g_1+g_2|=&\sup_{x\in X} |g_1(x)+g_2(x)|\\\leq &\sup_{x\in X} |g_1(x)|+\sup_{x\in X} |g_2(x)|=|g_1|+|g_2|\end{split}\]
+\item[(N2)] $|ag_1|=\sup_{x\in X} |ag_1(x)|=\sup_{x\in X} (|a||g_1(x)|)\\
+\phantom{|a_{1ag}} =|a|\sup_{x\in X} |g_1(x)|=|a||g_1|$
+\item[(N3)] $|g_1|=\sup_{x\in X} |g_1(x)|=0\implies g_1(x)=0\qquad$ kaikilla $ x\in X$
+\end{itemize}
+Seuraavaksi määritellään homeomorfismi $h\colon X\rightarrow h(X)\subset Z$. Tätä varten asetamme funktion $f_x\in Z$ jokaiselle $x\in X$ yhtälön $f_x (y)=d(x,y)$ mukaisesti, eli
+%Asetamme 
+$$h(x)=f_x\, ,\qquad x\in X. $$ 
+Tällöin pätee 
+$$d(f_{x_1} ,f_{x_2} ) \geq |d(x_1 , x_2 )-d(x_2 , x_2 )|=d(x_1 ,x_2 ).$$ 
+Toisaalta mielivaltaiselle $y\in X$ pätee
+$$|f_{x_1} (y), f_{x_2} (y)|=|d(x_1 ,y )-d(x_2 ,y)|\leq d(x_1 , x_2 ),$$
+jolloin siis $d(f_{x_1},f_{x_2})\leq d(x_1 , x_2 )$. Edeltävistä epäyhtälöistä saadaan $d(f_{x_1},f_{x_2})= d(x_1 , x_2 )$, joka osoittaa, että kuvaus $h$ säilyttää pisteiden väliset etäisyydet ja on siten homeomorfismi.\\
+%\newpage
+Osoitetaan, että $hX$ on suljettu konveksissa verhossa $C(hX)$. Tavoitteena on osoittaa, että minkä tahansa jonon $f_{x_n}\in hX$ raja-arvo kuuluu joukkoon $ hX$. Olkoon $f\in C(hX)$ ja määritellään 
+$$f=\lim_{n\rightarrow\infty} f_{x_n} \, , \qquad f_{x_n}\in hX.$$ 
+Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\cdots, a_k \in X$, $\lambda_0,\lambda_1,\cdots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että $$f=\sum_{i=0}^k \lambda_i f_{a_i}\qquad \text{ missä } \sum_{i=0}^k \lambda_i =1.$$
+Tällöin on ainakin yksi $i\leq k$, jolla $\lambda_i \geq 1/(k+1)$. Tämä seuraa siitä, että $$\sum_{i=0}^k \frac{1}{k+1}=k\cdot \dfrac{1}{k+1}=\dfrac{k}{k+1}<1 .$$ Tällöin voidaan vaihtaa $\lambda_0$ ja $\lambda_i$ keskenään ja vastaavasti $a_0$ ja $a_i$ keskenään, jolloin saadaan $\lambda_0\geq 1/(k+1)$. Jos jollain $i\neq j$ ja $i,j\leq k$ %ja $i,j\in \N$ 
+pätee $ a_i=a_j$, niin on mahdollista valita uudet $$a_0,a_1,\cdots a_i,\cdots, a_{j-1},a_{j+1},\cdots a_{k}$$ ja vastaavat $$\lambda_0,\lambda_1,\cdots, (\lambda_i+\lambda_j),\cdots ,
+\lambda_{j-1},
+\lambda_{j+1},\cdots, \lambda_{k-1}.$$ 
+Voidaan siis valita sellaiset $a_0,a_1,\cdots, a_k$, jotka ovat erillisiä ja sellaiset $\lambda_0,\lambda_1,\cdots \lambda_k$, että $\lambda_0$ täyttää ehdon $\lambda_0\geq 1/(k+1)$. Tällöin $$d(f,f_{x_n})\geq |f(x_n)-f_{x_n}(x_n)|=|f(x_n)|\geq \lambda_0 f_{a_0}(x_n)\geq \dfrac{1}{k+1}d(a_0,x_n).$$
+Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. Siis $ f=f_{a_0}\in hX$ pätee.
+
+
+\newpage
+\section{Fréchetin upotuslause.} %Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
+\begin{teoreema}
+Olkoon $Z$ rajoitettujen jonojen sup-normilla varustettu vektoriavaruus. Nyt jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa upotus $h\colon X\rightarrow Z$. 
+\end{teoreema}
+\vspace{0.5cm}
+
+\emph{Todistus.} Olkoon $Z$ kaikkien rajoitettujen jonojen joukko. Asetetaan
+$$|f_1|=\sup_{x\in Z} |f_1(x)| \, , \qquad f_1\in Z$$
+ja
+$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in Z} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
+
+Olkoon $(X,d)$ separoituva metrinen avaruus. Tällöin on olemassa separoituvuuden määritelmän mukainen tiheä ja numeroituva osajoukko $\{x_0,x_1\cdots \}\subset X$. Tällöin voidaan määritellään 
+$$x\mapsto s^x,\quad s^x_i=d(x,x_i)-d(x_i,x_0).$$
+%Tällöin $d(x,x_i)-d(x_i,x_0)\leq d(x,x_0)$ ja 
+Tällöin Kuratowskin upotuslauseen antama laajennus kiinnitetyllä pisteellä $x_0$ tiheästä osajoukosta täydelliseen avaruuteen on
+$$\{x_0,x_1,\cdots\}\hookrightarrow L^\infty (\{x_0,x_1,\cdots\})\simeq l^\infty. $$
+Upotus $x\mapsto s^x$ säilyttää etäisyydet, sillä 
+$$|s^a_i-s^b_i|=|d(a,x_i)-d(b,x_i)|\leq d(a,b)\quad \text{kaikilla } a,b\in X,i\in .$$
+Yhtälön yhtäsuuruus pätee jos $x_i=a$ tai $x_i=b$. 
+
+
+
+
+
+
+
+
+
+
+
+
+%\newpage
+%Alkuperäinen muoto:\\
+%\textbf{Fréchetin upotuslause.} %Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
+%Jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa etäisyydet säilyttävä upotus Banachin avaruuteen $s\colon X\rightarrow l^\infty$. 
+%(Huomautus: Banachin avaruus $l^\infty=L^\infty(\N)$ on rajoitettujen jonojen sup-normilla varustettu avaruus.)
+%
+%\vspace{0.5cm}
+%
+%\emph{Todistus.} Olkoon $(X,d)$ separoituva metrinen avaruus. Tällöin on olemassa separoituvuuden määritelmän mukainen tiheä ja numeroituva osajoukko $\{x_0,x_1\cdots \}\subset X$. Tällöin voidaan määritellään 
+%$$x\mapsto s^x,\quad s^x_i=d(x,x_i)-d(x_i,x_0).$$
+%Tällöin Kuratowskin upotuslauseen antama laajennus kiinnitetyllä pisteellä $x_0$ tiheästä osajoukosta täydelliseen avaruuteen on
+%$$\{x_0,x_1,\cdots\}\hookrightarrow L^\infty (\{x_0,x_1,\cdots\})\simeq l^\infty. $$
+%Upotus $x\mapsto s^x$ säilyttää etäisyydet, sillä 
+%$$|s^a_i-s^b_i|=|d(a,x_i)-d(b,x_i)|\leq d(a,b)\quad \text{kaikilla } a,b\in X,i\in .$$
+%Yhtälön yhtäsuuruus pätee jos $x_i=a$ tai $x_i=b$. 
+
+
+
+%\vspace{1.5cm}
+%[idea kirjoittaa kuratowskin upotuslauseen todistus auki. erityisesti keskittyen convex hull -osioon. Tarvittavat esitiedot alkuun, eli selitettynä tarvittavat käsitteet ja niiden todistukset]
+
+
+ 
+\end{document}
