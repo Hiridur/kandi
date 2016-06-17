@@ -229,15 +229,23 @@ Joukko $A\subset E$ on konveksi, jos ja vain jos $[a,b]\subset A$ kaikilla $a,b\
 }
 \end{maar}
 \begin{maar}Konveksi verho. \emph{Olkoon $E$ normiavaruus, $A\subset E$ ja $(A_j)_{j\in J}\subset \mathcal{P}(E)$ 
-kaikkien sellaisten konveksien osajoukkojen muodostama perhe, joilla %joukko $A_k$ konveksi ja 
-$A\subset A_k$ kaikilla $k\in J$. Tällöin joukko $C(A)=\bigcap_{j\in J} A_j$ on joukon $A$ konveksi verho. }
+kaikkien sellaisten konveksien osajoukkojen $A_k\subset E$, $k\in J$ muodostama perhe, joilla %joukko $A_k$ konveksi ja 
+$A\subset A_k$% kaikilla $k\in J$
+.\\ Tällöin joukko $C(A)=\bigcap_{j\in J} A_j$ on joukon $A$ konveksi verho. }
 \end{maar}
 \begin{lemma} \emph{Konveksi verho $C(A)$ on konveksi}.\end{lemma} 
-\emph{Todistus.} Olkoon $a,b\in C(A)=\bigcap_{j\in J} A_j$. Tällöin $a,b\in A_i$ kaikilla $i\in J$ ja koska erityisesti jokainen $A_i$ on konveksi täytyy myös päteä $[a,b]\in A_i$ kaikilla $i\in J$. Siis konveksi verho $C(A)$ on konveksi.%%Tästä seuraa, että konveksi verho $C(A)$ on konveksi. \end{korollaari}
+\emph{Todistus.} Olkoon $a,b\in C(A)=\bigcap_{j\in J} A_j$. 
+Tällöin $a,b\in A_i$ kaikilla $i\in J$. %ja koska erityisesti 
+Jokainen $A_i$ on konveksi, joten kaikilla $i\in J$ pätee $[a,b]\subset A_i$.
+Tällöin kaikilla $a,b\in C(A)$ pätee $[a,b] \subset C(A)$, joten konveksi verho $C(A)$ on konveksi.
+%%Tästä seuraa, että konveksi verho $C(A)$ on konveksi. \end{korollaari}
 \begin{korollaari}\emph{Konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.}
 \end{korollaari}
 %%Tällöin koska $C(A)=\bigcap_{j\in J} A_j$, niin $C(A)\subset A_i$ kaikilla $i\in J$. Tällöin konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.
-\emph{Todistus.} Olkoon $B$ sellainen konveksi joukko, jolla $A\subset B\subset C(A)$. Joukko $B$ on konveksi ja $A\subset B$, joten $B\in (A_j)_{j\in J}$. Tällöin\\ $C(A)=\bigcap_{j\in J} A_j\subset B$, sillä $C(A)\subset A_i$ kaikilla $i\in J$. Siis $B\subset C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$
+\emph{Todistus.} Olkoon $B$ sellainen konveksi joukko, jolla $A\subset B\subset C(A)$. 
+Joukko $B$ on konveksi ja $A\subset B$, joten $B\in (A_j)_{j\in J}$. 
+Tällöin\\ $C(A)=\bigcap_{j\in J} A_j\subset B$%, sillä $C(A)\subset A_i$ kaikilla $i\in J$
+. Siis $B= C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$
 
 \begin{lemma} \emph{Olkoon $E$ normiavaruus ja $A\subset E$. Tällöin joukon $A$ konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista. }
 \end{lemma}
@@ -275,9 +283,9 @@ Siis konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ ve
 %convex hull = kaikkien A:n sisältävien konveksien joukkojen leikkaus -> konveksi ja sisältää A:n.
 
 
-\begin{maar}
+%\begin{maar}
 
-\end{maar}
+%\end{maar}
 
 \newpage
 \section{Banachin avaruus}
