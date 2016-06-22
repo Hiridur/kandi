@@ -13,18 +13,19 @@
 \newtheorem{maar}{Määritelmä}[section]
 \newtheorem{huom}[maar]{Huomautus}
 \newtheorem{lause}[maar]{Lause}
-\newtheorem{lemma}[maar]{Lemma}
-\newtheorem{teoreema}[maar]{Teoreema}
+\newtheorem{lem}[maar]{Lemma}
 \newtheorem{esim}[maar]{Esimerkki}
-\newtheorem{korollaari}[maar]{Korollaari}
+\newtheorem{kor}[maar]{Korollaari}
 \pagestyle{plain}
  
-\title{Kuratowskin upotuslause\\Kandintyö}
-\author{Pekka Keipi\\013592712} 
+\title{Kuratowskin upotuslause}
+\author{Pekka Keipi} 
  
 \begin{document}
  
 \maketitle
+\newpage
+\tableofcontents{}
 \newpage
 \section{Funktion rajoittuma, normi ja sup-normi}
 \begin{maar}
@@ -65,10 +66,10 @@ Olkoon $D$ avaruus ja $F(D,\R)$ kaikkien avaruudessa $D$ määriteltyjen reaalia
 Rajoitettujen funktioiden avaruus $Raj(D,\R )$ koostuu kaikista rajoitetuista funktioista $f\colon D\rightarrow \R $.
 }
 \end{maar}
-\begin{lemma}
+\begin{lem}
 %Olkoon $D$ avaruus ja $F(D,\R)$ avaruuden $D$ reaaliarvoisten funktioiden avaruus. Tällöin r
 Rajoitettujen funktioiden avaruus $Raj(D,\R )$ on reaaliarvoisten funktioiden joukon $F(D,\R)$ aliavaruus.
-\end{lemma}
+\end{lem}
 %\noindent
 \emph{Todistus.} Olkoon $f,g\in Raj(D,\R),M,N\in\R, M,N\geq 0$ niin, että $|f(x)|\leq M$ ja $|g(x)|\leq N$ kaikilla $x\in D$. Tällöin seuraavat kohdat pätevät: 
 \begin{itemize}
@@ -203,7 +204,7 @@ Vastaavasti olkoon $y\in A$, jolloin kaikilla $x\in X$ pätee $d(y,A)-d(x,A)\leq
 Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos ja vain jos $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$.
 }
 \end{maar}
-%\begin{lemma}
+%\begin{lem}
 %Isometria on aina myös upotus. \\
 %\\
 %Todistus.\emph{ Olkoon $(X,d)$ ja $(X',d')$ metrisiä avaruuksia ja kuvaus $h\colon X\rightarrow X'$ isometria. Tällöin $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$.
@@ -213,12 +214,12 @@ Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos ja vain jos $d(x_1,
 %\item[(3)] $h^{-1} \colon X'\rightarrow X$ on jatkuva. 
 %\end{itemize}
 %}
-%\end{lemma}
+%\end{lem}
 \begin{esim}\emph{
 Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruudessa $\R^2$.}
 \end{esim}
 \newpage
-\chapter
+%\chapter
 \section{Konveksi verho}
 \begin{maar}%%Konveksi joukko sisältää kaikkien alkioidensa väliset janapolut. 
 Konveksius. \emph{Olkoon $E$ normiavaruus, $A\subset E$ ja $a,b\in A$. Yhtälö 
@@ -240,22 +241,22 @@ kaikkien sellaisten konveksien osajoukkojen $A_k\subset E$, $k\in J$ muodostama 
 $A\subset A_k$% kaikilla $k\in J$
 .\\ Tällöin joukko $C(A)=\bigcap_{j\in J} A_j$ on joukon $A$ konveksi verho. }
 \end{maar}
-\begin{lemma} \emph{Konveksi verho $C(A)$ on konveksi}.\end{lemma} 
+\begin{lem} \emph{Konveksi verho $C(A)$ on konveksi}.\end{lem} 
 \emph{Todistus.} Olkoon $a,b\in C(A)=\bigcap_{j\in J} A_j$. 
 Tällöin $a,b\in A_i$ kaikilla $i\in J$. %ja koska erityisesti 
 Jokainen $A_i$ on konveksi, joten kaikilla $i\in J$ pätee $[a,b]\subset A_i$.
 Tällöin kaikilla $a,b\in C(A)$ pätee $[a,b] \subset C(A)$, joten konveksi verho $C(A)$ on konveksi.
-%%Tästä seuraa, että konveksi verho $C(A)$ on konveksi. \end{korollaari}
-\begin{korollaari}\emph{Konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.}
-\end{korollaari}
+%%Tästä seuraa, että konveksi verho $C(A)$ on konveksi. \end{kor}
+\begin{kor}\emph{Konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.}
+\end{kor}
 %%Tällöin koska $C(A)=\bigcap_{j\in J} A_j$, niin $C(A)\subset A_i$ kaikilla $i\in J$. Tällöin konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.
 \emph{Todistus.} Olkoon $B$ sellainen konveksi joukko, jolla $A\subset B\subset C(A)$. 
 Joukko $B$ on konveksi ja $A\subset B$, joten $B\in (A_j)_{j\in J}$. 
 Tällöin\\ $C(A)=\bigcap_{j\in J} A_j\subset B$%, sillä $C(A)\subset A_i$ kaikilla $i\in J$
 . Siis $B= C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$
 
-\begin{lemma} \emph{Olkoon $E$ normiavaruus ja $A\subset E$. Tällöin joukon $A$ konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista. }
-\end{lemma}
+\begin{lem} \emph{Olkoon $E$ normiavaruus ja $A\subset E$. Tällöin joukon $A$ konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista. }
+\end{lem}
 
 \emph{Todistus.} 
 Olkoon $x_0,x_1,\cdots, x_n, x_{n+1} \in A$, $a,\lambda_0,\lambda_1,\cdots, \lambda_n, \lambda_{n+1} \in \R$ ja $a,\lambda_i\geq 0$ kaikilla $ i\in\N$. Konveksiuden nojalla 
@@ -312,9 +313,9 @@ Jono $(x_n\colon n\in \N$
 \newpage
 \section{Kuratowskin upotuslause}
 \noindent 
-\begin{teoreema}
+\begin{lause}
 Jokaista metristä avaruutta $(X,d)$ kohti on olemassa normiavaruus $Z$ ja upotus $h\colon X\rightarrow Z$ missä $ hX\subset Z$ on suljettu konveksissa verhossa $C(hX)$. 
-\end{teoreema} 
+\end{lause} 
  
 \vspace{0.5cm}
 
@@ -366,9 +367,9 @@ Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim
 
 %\newpage
 %\section{Fréchetin upotuslause.} %Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
-%\begin{teoreema}
+%\begin{lause}
 %Olkoon $Z$ rajoitettujen jonojen sup-normilla varustettu vektoriavaruus. Nyt jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa upotus $h\colon X\rightarrow Z$. 
-%\end{teoreema}
+%\end{lause}
 %\vspace{0.5cm}
 %
 %\emph{Todistus.} Olkoon $Z$ kaikkien rajoitettujen jonojen joukko. Asetetaan
@@ -389,8 +390,8 @@ Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim
 
 \newpage
 \section{Kuratowskin upotuslause v2}
-\begin{teoreema}Jokaista metristä avaruutta $X$ kohti on olemassa upotus Banachin avaruuteen $L^{\infty}(X)$ missä $L^{\infty}(X)$ on avaruuden $X$ kaikkien rajoitettujen funktioiden avaruus varustettuna sup-normilla.
-\end{teoreema}
+\begin{lause}Jokaista metristä avaruutta $X$ kohti on olemassa upotus Banachin avaruuteen $L^{\infty}(X)$ missä $L^{\infty}(X)$ on avaruuden $X$ kaikkien rajoitettujen funktioiden avaruus varustettuna sup-normilla.
+\end{lause}
 
 \emph{Todistus} Olkoon $x_0\in X$ ja 
 $$ x\mapsto s^x,\quad s^x(a)=d(x,a)-d(a,x_0),x\in X.$$ 
@@ -405,10 +406,11 @@ jossa yhtäsuuruus pätee, jos $a=x $ tai $a=y $.
 
 \newpage
 %Alkuperäinen muoto:\\
-\section{Fréchetin upotuslause.} Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
-\begin{teoreema}Jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa etäisyydet säilyttävä upotus Banachin avaruuteen $s\colon X\rightarrow l^\infty$. 
+\section{Fréchetin upotuslause.} 
+Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
+\begin{lause}Jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa etäisyydet säilyttävä upotus Banachin avaruuteen $s\colon X\rightarrow l^\infty$. 
 (Huomautus: Banachin avaruus $l^\infty=L^\infty(\N)$ on rajoitettujen jonojen sup-normilla varustettu avaruus.)
-\end{teoreema}
+\end{lause}
 
 \vspace{0.5cm}
 
