@@ -364,53 +364,61 @@ Voidaan siis valita sellaiset $a_0,a_1,\cdots, a_k$, jotka ovat erillisiä ja se
 Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. Siis $ f=f_{a_0}\in hX$ pätee.
 
 
-\newpage
-\section{Fréchetin upotuslause.} %Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
-\begin{teoreema}
-Olkoon $Z$ rajoitettujen jonojen sup-normilla varustettu vektoriavaruus. Nyt jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa upotus $h\colon X\rightarrow Z$. 
-\end{teoreema}
-\vspace{0.5cm}
-
-\emph{Todistus.} Olkoon $Z$ kaikkien rajoitettujen jonojen joukko. Asetetaan
-$$|f_1|=\sup_{x\in Z} |f_1(x)| \, , \qquad f_1\in Z$$
-ja
-$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in Z} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
-
-Olkoon $(X,d)$ separoituva metrinen avaruus. Tällöin on olemassa separoituvuuden määritelmän mukainen tiheä ja numeroituva osajoukko $\{x_0,x_1\cdots \}\subset X$. Tällöin voidaan määritellään 
-$$x\mapsto s^x,\quad s^x_i=d(x,x_i)-d(x_i,x_0).$$
-%Tällöin $d(x,x_i)-d(x_i,x_0)\leq d(x,x_0)$ ja 
-Tällöin Kuratowskin upotuslauseen antama laajennus kiinnitetyllä pisteellä $x_0$ tiheästä osajoukosta täydelliseen avaruuteen on
-$$\{x_0,x_1,\cdots\}\hookrightarrow L^\infty (\{x_0,x_1,\cdots\})\simeq l^\infty. $$
-Upotus $x\mapsto s^x$ säilyttää etäisyydet, sillä 
-$$|s^a_i-s^b_i|=|d(a,x_i)-d(b,x_i)|\leq d(a,b)\quad \text{kaikilla } a,b\in X,i\in .$$
-Yhtälön yhtäsuuruus pätee jos $x_i=a$ tai $x_i=b$. 
-
-
-
-
-
-
-
-
-
-
-
-
 %\newpage
-%Alkuperäinen muoto:\\
-%\textbf{Fréchetin upotuslause.} %Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
-%Jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa etäisyydet säilyttävä upotus Banachin avaruuteen $s\colon X\rightarrow l^\infty$. 
-%(Huomautus: Banachin avaruus $l^\infty=L^\infty(\N)$ on rajoitettujen jonojen sup-normilla varustettu avaruus.)
-%
+%\section{Fréchetin upotuslause.} %Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
+%\begin{teoreema}
+%Olkoon $Z$ rajoitettujen jonojen sup-normilla varustettu vektoriavaruus. Nyt jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa upotus $h\colon X\rightarrow Z$. 
+%\end{teoreema}
 %\vspace{0.5cm}
 %
-%\emph{Todistus.} Olkoon $(X,d)$ separoituva metrinen avaruus. Tällöin on olemassa separoituvuuden määritelmän mukainen tiheä ja numeroituva osajoukko $\{x_0,x_1\cdots \}\subset X$. Tällöin voidaan määritellään 
+%\emph{Todistus.} Olkoon $Z$ kaikkien rajoitettujen jonojen joukko. Asetetaan
+%$$|f_1|=\sup_{x\in Z} |f_1(x)| \, , \qquad f_1\in Z$$
+%ja
+%$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in Z} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
+%
+%Olkoon $(X,d)$ separoituva metrinen avaruus. Tällöin on olemassa separoituvuuden määritelmän mukainen tiheä ja numeroituva osajoukko $\{x_0,x_1\cdots \}\subset X$. Tällöin voidaan määritellään 
 %$$x\mapsto s^x,\quad s^x_i=d(x,x_i)-d(x_i,x_0).$$
+%%Tällöin $d(x,x_i)-d(x_i,x_0)\leq d(x,x_0)$ ja 
 %Tällöin Kuratowskin upotuslauseen antama laajennus kiinnitetyllä pisteellä $x_0$ tiheästä osajoukosta täydelliseen avaruuteen on
 %$$\{x_0,x_1,\cdots\}\hookrightarrow L^\infty (\{x_0,x_1,\cdots\})\simeq l^\infty. $$
 %Upotus $x\mapsto s^x$ säilyttää etäisyydet, sillä 
 %$$|s^a_i-s^b_i|=|d(a,x_i)-d(b,x_i)|\leq d(a,b)\quad \text{kaikilla } a,b\in X,i\in .$$
 %Yhtälön yhtäsuuruus pätee jos $x_i=a$ tai $x_i=b$. 
+
+
+
+\newpage
+\section{Kuratowskin upotuslause v2}
+\begin{teoreema}Jokaista metristä avaruutta $X$ kohti on olemassa upotus Banachin avaruuteen $L^{\infty}(X)$ missä $L^{\infty}(X)$ on avaruuden $X$ kaikkien rajoitettujen funktioiden avaruus varustettuna sup-normilla.
+\end{teoreema}
+
+\emph{Todistus} Olkoon $x_0\in X$ ja 
+$$ x\mapsto s^x,\quad s^x(a)=d(x,a)-d(a,x_0),x\in X.$$ 
+Tällöin kolmioepäyhtälöllä saadaan 
+$$|s^x(a)|=|d(x,a)-d(a,x_0)|\leq d(x,x_0)$$
+ja 
+$$|s^x(a)-s^y(a)|=|d(x,a)-d(y,a)|\leq d(x,y),$$
+jossa yhtäsuuruus pätee, jos $a=x $ tai $a=y $.
+
+
+
+
+\newpage
+%Alkuperäinen muoto:\\
+\section{Fréchetin upotuslause.} Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
+\begin{teoreema}Jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa etäisyydet säilyttävä upotus Banachin avaruuteen $s\colon X\rightarrow l^\infty$. 
+(Huomautus: Banachin avaruus $l^\infty=L^\infty(\N)$ on rajoitettujen jonojen sup-normilla varustettu avaruus.)
+\end{teoreema}
+
+\vspace{0.5cm}
+
+\emph{Todistus.} Olkoon $(X,d)$ separoituva metrinen avaruus. Tällöin on olemassa separoituvuuden määritelmän mukainen tiheä ja numeroituva osajoukko $\{x_0,x_1\cdots \}\subset X$. Tällöin voidaan määritellään 
+$$x\mapsto s^x,\quad s^x_i=d(x,x_i)-d(x_i,x_0).$$
+Tällöin Kuratowskin upotuslauseen antama laajennus kiinnitetyllä pisteellä $x_0$ tiheästä osajoukosta täydelliseen avaruuteen on
+$$\{x_0,x_1,\cdots\}\hookrightarrow L^\infty (\{x_0,x_1,\cdots\})\simeq l^\infty. $$
+Upotus $x\mapsto s^x$ säilyttää etäisyydet, sillä 
+$$|s^a_i-s^b_i|=|d(a,x_i)-d(b,x_i)|\leq d(a,b)\quad \text{kaikilla } a,b\in X,i\in .$$
+Yhtälön yhtäsuuruus pätee jos $x_i=a$ tai $x_i=b$. 
 
 
 
