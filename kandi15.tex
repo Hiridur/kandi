@@ -1,33 +1,63 @@
-\documentclass[12pt,a4paper,reqno]{amsart}
-\usepackage[utf8]{inputenc}  % Unixin merkistö
-\usepackage[T1]{fontenc}       % kirjaimet, joissa aksentteja (skandit)
-\usepackage[finnish]{babel}    % suomalaiset babel-makrot
-\usepackage{amsfonts}          % AMS-paketteja
+\documentclass[12pt,a4paper,leqno]{report}
+
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[finnish]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}         
 \usepackage{amsmath}
 \usepackage{amssymb}
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\No}{\mathbb{N}_0}
 \newcommand{\Z}{\mathbb{Z}}
-\newtheorem{maar}{Määritelmä}[section]
-\newtheorem{huom}[maar]{Huomautus}
-\newtheorem{lause}[maar]{Lause}
-\newtheorem{lem}[maar]{Lemma}
-\newtheorem{esim}[maar]{Esimerkki}
-\newtheorem{kor}[maar]{Korollaari}
+\newcommand{\diam}{\operatorname{diam}}
+
+\theoremstyle{plain}
+\newtheorem{lause}[equation]{Lause}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{prop}[equation]{Propositio}
+\newtheorem{kor}[equation]{Korollaari}
+
+\theoremstyle{definition}
+\newtheorem{maar}[equation]{Määritelmä}
+\newtheorem{konj}[equation]{Konjektuuri}
+\newtheorem{esim}[equation]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem{huom}[equation]{Huomautus}
+
 \pagestyle{plain}
- 
+\setcounter{page}{1}
+\addtolength{\hoffset}{-1.15cm}
+\addtolength{\textwidth}{2.3cm}
+\addtolength{\voffset}{0.45cm}
+\addtolength{\textheight}{-0.9cm}
+
 \title{Kuratowskin upotuslause}
-\author{Pekka Keipi} 
- 
+\author{Pekka Keipi}
+%\date{}
+
 \begin{document}
- 
+
 \maketitle
-\newpage
-\tableofcontents{}
-\newpage
-\section{Funktion rajoittuma, normi ja sup-normi}
+
+\tableofcontents
+
+\chapter{Johdanto}\label{johd}
+
+Tämän tutkielman tarkoituksena on esitellä Kuratowskin upotuslause jne.. Luku \ref{normi}, ks.\ \cite{Topo1}
+%Tämän tutkielman tarkoituksena on esitellä todennäköisyys- ja momenttigeneroivia
+%funktioita. Yleisesti generoiva funktio on hyödyllinen esimerkiksi kombinatoriikassa. 
+%Matematiikan yliopisto-opinnoissa generoivat funktiot tulevat yleensä ensimmäisen
+%kerran tutuiksi todennäköisyyslaskennan kursseilla.
+
+\chapter{Funktion rajoittuma, normi ja sup-normi}\label{normi}
+
 \begin{maar}
 %\emph{Vektoriavaruus}
 Vektoriavaruus\\
@@ -133,8 +163,8 @@ Tapauksessa $D=\N$ saadaan kaikkien rajoitettujen jonojen joukko $raj(\N,\R).$ J
 \end{esim}
 
 
-\newpage
-\section{Metrinen avaruus}
+\chapter{Metrinen avaruus}\label{metrinen}
+
 \begin{maar} Metrinen avaruus \emph{on pari $(X,d)$, jossa $X$ on joukko ja $d$ on \emph{metriikka} joukossa $X$.
 Tällöin $d\colon X\times X\rightarrow \R_+$ on kuvaus, jolle pätee seuraavat ominaisuudet kaikilla $x,y,z\in X$:
 \begin{itemize}
@@ -218,9 +248,10 @@ Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos ja vain jos $d(x_1,
 \begin{esim}\emph{
 Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruudessa $\R^2$.}
 \end{esim}
-\newpage
-%\chapter
-\section{Konveksi verho}
+
+
+\chapter{Konveksi verho}\label{konverho}
+
 \begin{maar}%%Konveksi joukko sisältää kaikkien alkioidensa väliset janapolut. 
 Konveksius. \emph{Olkoon $E$ normiavaruus, $A\subset E$ ja $a,b\in A$. Yhtälö 
 $$\alpha (t)=a+t(b-a)=(1-t)a+tb$$ 
@@ -295,8 +326,8 @@ Siis konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ ve
 
 %\end{maar}
 
-\newpage
-\section{Banachin avaruus}
+
+\chapter{Banachin avaruus}\label{Banach}
 
 \begin{maar}Cauchyn jono \emph{
 Jono $(x_n\colon n\in \N$
@@ -310,14 +341,13 @@ Jono $(x_n\colon n\in \N$
 \end{maar}
 
 
-\newpage
-\section{Kuratowskin upotuslause}
-\noindent 
+\chapter{Kuratowskin upotuslause}\label{kuratowski}
+
 \begin{lause}
 Jokaista metristä avaruutta $(X,d)$ kohti on olemassa normiavaruus $Z$ ja upotus $h\colon X\rightarrow Z$ missä $ hX\subset Z$ on suljettu konveksissa verhossa $C(hX)$. 
 \end{lause} 
  
-\vspace{0.5cm}
+%\vspace{0.5cm}
 
 \noindent\emph{Todistus.} Olkoon $(X,d)$ metrinen avaruus. Tällöin myös
 $$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
@@ -365,8 +395,8 @@ Voidaan siis valita sellaiset $a_0,a_1,\cdots, a_k$, jotka ovat erillisiä ja se
 Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. Siis $ f=f_{a_0}\in hX$ pätee.
 
 
-%\newpage
-%\section{Fréchetin upotuslause.} %Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
+%\chapter{Fréchetin upotuslause.} \label{Frechet_modded}
+%Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
 %\begin{lause}
 %Olkoon $Z$ rajoitettujen jonojen sup-normilla varustettu vektoriavaruus. Nyt jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa upotus $h\colon X\rightarrow Z$. 
 %\end{lause}
@@ -388,8 +418,9 @@ Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim
 
 
 
-\newpage
-\section{Kuratowskin upotuslause v2}
+
+\chapter{Kuratowskin upotuslause v2}\label{Kuratowski2}
+
 \begin{lause}Jokaista metristä avaruutta $X$ kohti on olemassa upotus Banachin avaruuteen $L^{\infty}(X)$ missä $L^{\infty}(X)$ on avaruuden $X$ kaikkien rajoitettujen funktioiden avaruus varustettuna sup-normilla.
 \end{lause}
 
@@ -404,9 +435,11 @@ jossa yhtäsuuruus pätee, jos $a=x $ tai $a=y $.
 
 
 
-\newpage
-%Alkuperäinen muoto:\\
-\section{Fréchetin upotuslause.} 
+
+
+
+\chapter{Fréchetin upotuslause}\label{Frechet}
+
 Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
 \begin{lause}Jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa etäisyydet säilyttävä upotus Banachin avaruuteen $s\colon X\rightarrow l^\infty$. 
 (Huomautus: Banachin avaruus $l^\infty=L^\infty(\N)$ on rajoitettujen jonojen sup-normilla varustettu avaruus.)
@@ -424,9 +457,30 @@ Yhtälön yhtäsuuruus pätee jos $x_i=a$ tai $x_i=b$.
 
 
 
-%\vspace{1.5cm}
-%[idea kirjoittaa kuratowskin upotuslauseen todistus auki. erityisesti keskittyen convex hull -osioon. Tarvittavat esitiedot alkuun, eli selitettynä tarvittavat käsitteet ja niiden todistukset]
 
 
- 
+
+%\chapter{spaceholder}\label{nolabel}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{Bor}
+Karol Borsuk: Theory of retracts, n.\ painos, Państwowe Wydawn. Naukowe, 1967.
+
+\bibitem{Topo1}
+Jussi Väisälä: Topologia I, n.\ painos, Limes ry, vuosi.
+
+\bibitem{Topo2}
+Jussi Väisälä: Topologia II, n.\ painos, Limes ry, vuosi.
+
+\bibitem{Hei}
+Juha Heinonen: Geometric embeddings of metric spaces, luentomoniste, Jyväskylän yliopisto, 2003
+%Sheldon (not really) Ross: A First Course in Probability, 5th edition, Prentice-Hall, 1998.
+
+%\bibitem{Tuo}
+%Pekka (not really) Tuominen: Todennäköisyyslaskenta I, 5.\ painos, Limes ry, 2000.
+
+\end{thebibliography}
+
 \end{document}
