@@ -58,6 +58,7 @@ Tämän tutkielman tarkoituksena on esitellä Kuratowskin upotuslause jne.. Luku
 
 \chapter{Funktion rajoittuma, normi ja sup-normi}\label{normi}
 
+Tässä kappaleessa esitellään vektori- ja normiavaruuksien ja näiden funktioiden perusominaisuuksia. Enemmän aiheesta löytyy kirjoista \cite{Topo1} ja \cite{Topo2}.
 \begin{maar}
 %\emph{Vektoriavaruus}
 Vektoriavaruus\\
@@ -168,7 +169,7 @@ Tapauksessa $D=\N$ saadaan kaikkien rajoitettujen jonojen joukko $raj(\N,\R).$ J
 
 
 \chapter{Metrinen avaruus}\label{metrinen}
-
+Tässä luvussa esitellään metristen avaruuksien ominaisuuksia.
 \begin{maar} Metrinen avaruus \emph{on pari $(X,d)$, jossa $X$ on joukko ja $d$ on \emph{metriikka} joukossa $X$.
 Tällöin $d\colon X\times X\rightarrow \R_+$ on kuvaus, jolle pätee seuraavat ominaisuudet kaikilla $x,y,z\in X$:
 \begin{itemize}
@@ -258,7 +259,7 @@ Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruud
 
 
 \chapter{Konveksi verho}\label{konverho}
-
+Tässä luvussa käsitellään konveksisuutta ja konveksia verhoa.
 \begin{maar}%%Konveksi joukko sisältää kaikkien alkioidensa väliset janapolut. 
 Konveksius. \emph{Olkoon $E$ normiavaruus, $A\subset E$ ja $a,b\in A$. Yhtälö 
 $$\alpha (t)=a+t(b-a)=(1-t)a+tb$$ 
@@ -405,28 +406,6 @@ Voidaan siis valita sellaiset $a_0,a_1,\cdots, a_k$, jotka ovat erillisiä ja se
 Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. Siis $ f=f_{a_0}\in hX$ pätee.
 
 \end{proof}
-
-%\chapter{Fréchetin upotuslause.} \label{Frechet_modded}
-%Jokainen separoituva metrinen avaruus $(X,d)$ on upotettavissa (isometrisesti) Banachin avaruuteen $l^\infty$. 
-%\begin{lause}
-%Olkoon $Z$ rajoitettujen jonojen sup-normilla varustettu vektoriavaruus. Nyt jokaista separoituvaa metristä avaruutta $(X,d)$ kohti on olemassa upotus $h\colon X\rightarrow Z$. 
-%\end{lause}
-%\vspace{0.5cm}
-%
-%\emph{Todistus.} Olkoon $Z$ kaikkien rajoitettujen jonojen joukko. Asetetaan
-%$$|f_1|=\sup_{x\in Z} |f_1(x)| \, , \qquad f_1\in Z$$
-%ja
-%$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in Z} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
-%
-%Olkoon $(X,d)$ separoituva metrinen avaruus. Tällöin on olemassa separoituvuuden määritelmän mukainen tiheä ja numeroituva osajoukko $\{x_0,x_1\cdots \}\subset X$. Tällöin voidaan määritellään 
-%$$x\mapsto s^x,\quad s^x_i=d(x,x_i)-d(x_i,x_0).$$
-%%Tällöin $d(x,x_i)-d(x_i,x_0)\leq d(x,x_0)$ ja 
-%Tällöin Kuratowskin upotuslauseen antama laajennus kiinnitetyllä pisteellä $x_0$ tiheästä osajoukosta täydelliseen avaruuteen on
-%$$\{x_0,x_1,\cdots\}\hookrightarrow L^\infty (\{x_0,x_1,\cdots\})\simeq l^\infty. $$
-%Upotus $x\mapsto s^x$ säilyttää etäisyydet, sillä 
-%$$|s^a_i-s^b_i|=|d(a,x_i)-d(b,x_i)|\leq d(a,b)\quad \text{kaikilla } a,b\in X,i\in .$$
-%Yhtälön yhtäsuuruus pätee jos $x_i=a$ tai $x_i=b$. 
-
 
 
 
