@@ -89,7 +89,7 @@ Osajoukko $W\subset V$ on vektoriavaruuden $V$ (vektori)aliavaruus, jos
 \begin{maar}
 \emph{Rajoitettu funktio}\\
 Olkoon $D$ avaruus ja $F(D,\R)$ kaikkien avaruudessa $D$ määriteltyjen 
-reaaliarvoisten funktioiden $f\colon D\rightarrow \R$ joukko. 
+reaaliarvoisten funktioiden $f\colon D\rightarrow \R$ joukko. Joukko $F(D,\R)$ on vektoriavaruus \cite{Topo1}. %luku 1.1.
 Funktio $f\colon D\rightarrow \R$ on rajoitettu, 
 jos on olemassa sellainen $M\in\R,M\geq 0$, 
 jolla $|f(x)|\leq M$ kaikilla $x\in D$.\\\\
@@ -99,14 +99,14 @@ Rajoitettujen funktioiden avaruus $Raj(D,\R )$ koostuu kaikista rajoitetuista fu
 \end{maar}
 \begin{lem}
 %Olkoon $D$ avaruus ja $F(D,\R)$ avaruuden $D$ reaaliarvoisten funktioiden avaruus. Tällöin r
-Rajoitettujen funktioiden avaruus $Raj(D,\R )$ on reaaliarvoisten funktioiden joukon $F(D,\R)$ aliavaruus.
+Rajoitettujen funktioiden avaruus $Raj(D,\R )$ on reaaliarvoisten funktioiden vektoriavaruuden $F(D,\R)$ aliavaruus.
 \end{lem}
 %\noindent
 \begin{proof}
  Olkoon $f,g\in Raj(D,\R),M,N\in\R, M,N\geq 0$ niin, että $|f(x)|\leq M$ ja $|g(x)|\leq N$ kaikilla $x\in D$. Tällöin seuraavat kohdat pätevät: 
 \begin{itemize}
-\item[i)\phantom{iiv}] $|f(x)|+|g(x)|\leq M+N\leq\infty$, siis $f+g\in Raj(D,\R)$ kaikilla $f,g\in Raj(D,\R),$
-\item[ii)\phantom{iv}] $|af(x)|\leq a\cdot M\leq\infty$, siis $af\in Raj(D,\R)$ kaikilla $a\in\R, f\in Raj(D,\R)$ ja
+\item[i)\phantom{iiv}] $|f(x)+g(x)|\leq|f(x)|+|g(x)|\leq M+N\leq\infty$, siis $f+g\in Raj(D,\R)$ kaikilla $f,g\in Raj(D,\R),$
+\item[ii)\phantom{iv}] $|af(x)|= |a|\cdot|f(x)|\leq |a|\cdot M\leq\infty$, siis $af\in Raj(D,\R)$ kaikilla $a\in\R, f\in Raj(D,\R)$ ja
 \item[iii)\phantom{v}] $0_{F(D,\R)}(x)=0$ kaikilla $x\in D$, jolloin $0_{F(D,\R)} \in Raj(D,\R )$.
 \end{itemize}
 \end{proof}
@@ -124,12 +124,13 @@ Vektoriavaruutta, jossa on annettu jokin normi, sanotaan normiavaruudeksi.
 \end{maar} 
 
 \begin{esim}
-Olkoon $\R ^n$ joukko, jossa määritellään tavallinen euklidinen normi $|x| = \sqrt{x^{2}_{1} + \cdots +x^{2}_{n}}$.
+Määritellään joukossa $\R ^n$ tavallinen euklidinen normi $|x| = \sqrt{x^{2}_{1} + \cdots +x^{2}_{n}}$.
+%Olkoon $\R ^n$ joukko, jossa määritellään tavallinen euklidinen normi $|x| = \sqrt{x^{2}_{1} + \cdots +x^{2}_{n}}$.
 
 \end{esim}
 
 \begin{maar} \emph{Sup-normi}\\
-Olkoon $D$ epätyhjä avaruus ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. Yhtälö $||f||=\sup\{|f(x)|\colon x\in D\}$ määrittelee normin avaruudessa $Raj(D,\R )$. %Normia $||\cdot||$ 
+Olkoon $D$ epätyhjä joukko ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. Yhtälö $||f||=\sup\{|f(x)|\colon x\in D\}$ määrittelee normin avaruudessa $Raj(D,\R )$. %Normia $||\cdot||$ 
 Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
 
 \end{maar} 
@@ -138,7 +139,7 @@ Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
 \begin{itemize}
 \item[(N1)] Olkoon $f,g\in Raj(D,\R )$ ja $x\in D$. Tällöin
 \begin{equation*}
-|f+g|(x)=|f(x)+g(x)|\leq|f(x)+g(x)|\leq||f||+||g||
+|f+g|(x)=|f(x)+g(x)|\leq|f(x)|+|g(x)|\leq||f||+||g||
 \end{equation*}
 kaikilla $x\in D$, joten $||f+g||\leq||f||+||g||$.
 
@@ -189,10 +190,7 @@ Olkoon $E$ normiavaruus ja $x,y\in E$.
 Metriikaksi voidaan valita $d(x,y)=|x-y|$, jolloin kaikilla $x,y\in E$ pätee
 \begin{itemize}
 \item[(M1)]%\begin{align*}
-$(x,y)=|x-y|=|x+(-y)|\leq|x|+|(-y)|=|x+0|+|0+y|$\\
-%\phantom{(x,y)}
-$= d(x,0)+d(0,y)$
-%(x,y)=&|x-y|=|x+(-y)|\leq|x|+|(-y)|=|x+0|+|0+y|\\=& d(x,0)+d(0,y)
+$d(x,z)=|x-z|=|x-y+y-z|=|(x-y)+(y-z)|\leq|x-y|+|y-z|=d(x,y)+d(y,z)$
 %\end{align*}
 \item[(M2)]$d(x,y)=|x-y|=|y-x|=d(y,x)$
 \item[(M3)]$d(x,y)=|x-y|=0$, jos ja vain jos $x=y$.
@@ -207,7 +205,7 @@ Tällöin pätee $d(A,B)\geq 0$ ja jos $A= \emptyset$ tai $B= \emptyset$, niin $
 
 \end{maar}
 \begin{lause}
-Olkoon $(X,d)$ metrinen avaruus, $x,y\in X$ ja $A\subset X$ epätyhjä. Tällöin $|d(x,A)-d(y,A)|\leq d(x,y)$. Erityisesti $|d(x,z)-d(y,z)|\leq d(x,y)$ kaikilla $z\in X$
+Olkoon $(X,d)$ metrinen avaruus, $x,y\in X$ ja $A\subset X$ epätyhjä. Tällöin $|d(x,A)-d(y,A)|\leq d(x,y)$. Erityisesti $|d(x,z)-d(y,z)|\leq d(x,y)$ kaikilla $z\in X$.
 \end{lause}
 
 \begin{proof}
@@ -238,7 +236,7 @@ tarkoittaa kuvausta $f\colon X\rightarrow Y$, joka määrittelee homeomorfismin 
 \end{maar}
 \begin{maar}\emph{Isometria}
  on etäisyydet säilyttävä kuvaus. Olkoon $(X,d)$ ja $(X',d')$ metrisiä avaruuksia. %Avaruudet $(X,d)$ ja $(X',d')$ ovat isometrisiä,
-Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos ja vain jos $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$.
+Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$.
 \end{maar}
 %\begin{lem}
 %Isometria on aina myös upotus. 
@@ -264,7 +262,7 @@ Tässä luvussa käsitellään konveksisuutta ja konveksia verhoa.
 $$\alpha (t)=a+t(b-a)=(1-t)a+tb$$ 
 määrittelee janapolun $\alpha \colon [0,1]\rightarrow E$. Kuvajoukko $\alpha [0,1] = [a,b]$ on jana, jonka päätepisteet ovat $\alpha (0)=a\in A$ ja $\alpha (1)=b\in A$. 
 % Merkitään $\alpha I = [a,b]$. 
-Joukko $A\subset E$ on konveksi, jos ja vain jos $[a,b]\subset A$ kaikilla $a,b\in A$ 
+Joukko $A\subset E$ on konveksi, jos ja vain jos $[a,b]\subset A$ kaikilla $a,b\in A$.
 %Jos $[a,b]\in A$, niin joukko $A$ on konveksi.%aina kun $a,b\in A$.
 \end{maar}
 \begin{esim}
@@ -274,7 +272,7 @@ Avaruuden $\R ^n$ suljettu yksikkökuula $ \bar B(0,1)= \{x\in \R ^n \colon |x|\
 \begin{maar}\emph{Konveksi verho.} Olkoon $E$ normiavaruus, $A\subset E$ ja $(A_j)_{j\in J}\subset \mathcal{P}(E)$ 
 kaikkien sellaisten konveksien osajoukkojen $A_k\subset E$, $k\in J$ muodostama perhe, joilla %joukko $A_k$ konveksi ja 
 $A\subset A_k$% kaikilla $k\in J$
-.\\ Tällöin joukko $C(A)=\bigcap_{j\in J} A_j$ on joukon $A$ konveksi verho. 
+. Tällöin joukko $C(A)=\bigcap_{j\in J} A_j$ on joukon $A$ konveksi verho. 
 \end{maar}
 \begin{lem} Konveksi verho $C(A)$ on konveksi.\end{lem} 
 \begin{proof} Olkoon $a,b\in C(A)=\bigcap_{j\in J} A_j$. 
@@ -288,11 +286,15 @@ Tällöin kaikilla $a,b\in C(A)$ pätee $[a,b] \subset C(A)$, joten konveksi ver
 %%Tällöin koska $C(A)=\bigcap_{j\in J} A_j$, niin $C(A)\subset A_i$ kaikilla $i\in J$. Tällöin konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.
 \begin{proof} Olkoon $B$ sellainen konveksi joukko, jolla $A\subset B\subset C(A)$. 
 Joukko $B$ on konveksi ja $A\subset B$, joten $B\in (A_j)_{j\in J}$. 
-Tällöin\\ $C(A)=\bigcap_{j\in J} A_j\subset B$%, sillä $C(A)\subset A_i$ kaikilla $i\in J$
-. Siis $B= C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$
+Tällöin $$C(A)=\bigcap_{j\in J} A_j\subset B.$$
+%, sillä $C(A)\subset A_i$ kaikilla $i\in J.$
+Siis $B= C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$.
 \end{proof}
 
-\begin{lem} Olkoon $E$ normiavaruus ja $A\subset E$. Tällöin joukon $A$ konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista. 
+\begin{lem} Olkoon $E$ normiavaruus ja $A\subset E$. 
+Tällöin joukon $A$ konveksi verho $C(A)$ on joukon $A$ vektorien muotoa $\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}$ olevien lineaarikombinaatioiden muodostama joukko, kun $x_i\in A$, $\lambda_i\geq0$ ja $\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1.$ 
+%sisältää kaikki sellaiset lineaarikombinaatiot joukon $A$ vektoreista, jotka ovat muotoa $\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},$ kun $x_i\in A$, $\lambda_i\geq0$ ja $\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1.$ 
+%i=1.$ 
 \end{lem}
 
 \begin{proof}
@@ -343,7 +345,7 @@ Jono $(x_n\colon n\in \N$
 \begin{maar}Banachin avaruus on täydellinen normiavaruus.
 \end{maar}
 
-\begin{maar}\emph{Separoituva avaruus.} Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\cdots\}=A\subset X$ niin, että jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.
+\begin{maar}\emph{Separoituva avaruus.} Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\cdots\}=A\subset X$, toisin sanoen, jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.
 \end{maar}
 
 
@@ -462,10 +464,10 @@ Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim
 Karol Borsuk: Theory of retracts, n.\ painos, Państwowe Wydawn. Naukowe, 1967.
 
 \bibitem{Topo1}
-Jussi Väisälä: Topologia I, n.\ painos, Limes ry, vuosi.
+Jussi Väisälä: Topologia I, 4.\ korjattu painos, Limes ry, 2007.
 
 \bibitem{Topo2}
-Jussi Väisälä: Topologia II, n.\ painos, Limes ry, vuosi.
+Jussi Väisälä: Topologia II, 2.\ korjattu painos, Limes ry, 2005.
 
 \bibitem{Hei}
 Juha Heinonen: Geometric embeddings of metric spaces, luentomoniste, Jyväskylän yliopisto, 2003
