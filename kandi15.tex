@@ -291,49 +291,100 @@ Tällöin $$C(A)=\bigcap_{j\in J} A_j\subset B.$$
 Siis $B= C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$.
 \end{proof}
 
+%Seuraavasta lemmasta on kaksi versiota, kumpi parempi?
 \begin{lem} Olkoon $E$ normiavaruus ja $A\subset E$. 
-Konveksi verho $C(A)$ on joukon $A$ vektorien muotoa $$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ olevien lineaarikombinaatioiden muodostama joukko. 
-%sisältää kaikki sellaiset lineaarikombinaatiot joukon $A$ vektoreista, jotka ovat muotoa $\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},$ kun $x_i\in A$, $\lambda_i\geq0$ ja $\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1.$ 
-%i=1.$ 
+%Konveksi verho $C(A)$ on joukon $A$ vektorien muotoa $$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ olevien lineaarikombinaatioiden muodostama joukko. 
+Konveksi verho $C(A)$ on muotoa 
+$$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ 
+%$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}$ 
+olevien lineaarikombinaatioiden muodostama joukko.
+%, missä $x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$. 
 \end{lem}
+%\begin{lem} Olkoon $E$ normiavaruus ja $A\subset E$. 
+%Konveksi verho $C(A)$ on joukon $A$ vektorien muotoa 
+%$$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ 
+%olevien lineaarikombinaatioiden muodostama joukko. 
+%%Konveksi verho $C(A)$ on joukon $A$ vektorien muotoa $\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},$ olevien lineaarikombinaatioiden muodostama joukko, missä $x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$. 
+%\end{lem}
 
-\begin{proof} Osoitetaan ensin, että kaikki kyseistä muotoa olevat lineaarikombinaatiot kuuluvat konveksiin peitteeseen.
-Olkoon $x_0,x_1,\cdots, x_n, x_{n+1} \in A$, $a,\lambda_0,\lambda_1,\cdots, \lambda_n, \lambda_{n+1} \in \R$ ja $a,\lambda_i\geq 0$ kaikilla $ i\in\N$. Konveksiuden nojalla 
-%$a x_1+b x_2 \in C(A)$, kun $a +b =1$. 
-$\lambda_0 x_0+\lambda_1 x_1 \in C(A)$, kun $\lambda_0 +\lambda_1=1$.
-%Edelleen $\lambda_1 (ax_1+b x_2)+\lambda_2 x_3 \in C(A)$, kun $\lambda_1 +\lambda_2 =1$ ja $a+b=1$. 
-%ja edelleen $a (\lambda_0 x_0+\lambda_1 x_1)+\lambda_2 x_2=a\lambda_0 x_0+a\lambda_1  x_1+\lambda_2 x_2 \in C(A)$, kun $\lambda_0 +\lambda_1 =1$ ja $a+\lambda_2=1$, eli kun $a\lambda_0+a\lambda_1+\lambda_2=a(\lambda_0+\lambda_1)+\lambda_2=a+\lambda_2=1$. 
-Oletetaan, että jollain $n\geq 1$ 
+\begin{proof}
+Konveksi verho $C(A)$ on konveksi ja $A\subset C(A)$, 
+joten kaikilla $a,b\in A$ pätee $[a,b]\subset C(A)$, 
+toisin sanoen, $(1-t)a+tb\in C(A)$ kaikilla $0\leq t \leq 1$, 
+erityisesti 
+\begin{equation}\label{konvsis}
+c_0 a+c_1 b \in C(A),\text{ kun }c_0,c_1\geq 0\text{ ja }c_0 +c_1=1.
+\end{equation}
+%Konveksi verho $C(A)$ on konveksi, joten kaikilla $x_0,x_1\in C(A)$ pätee $[x_0,x_1]\subset C(A)$, 
+%toisin sanoen, $(1-t)x_0+tx_1\in A$ kaikilla $0\leq t \leq 1$. 
+Olkoon $x_0,x_1,\dots, x_n, x_{n+1} \in A$, 
+$\lambda_0,\lambda_1,\dots, \lambda_n, \lambda_{n+1},d \in \R$ 
+ja $\lambda_i,d\geq 0$ kaikilla $ i\in\N$. 
+%Tällöin erityisesti 
+%$\lambda_0 x_0+\lambda_1 x_1 \in C(A)$, kun $\lambda_0 +\lambda_1=1$.
+%\begin{equation}\lambda_0 x_0+\lambda_1 x_1 \in C(A),
+%\text{ kun } x_0,x_1\in C(A), \lambda_0, \lambda_1\geq 0\text{ ja } \lambda_0 +\lambda_1=1.
+%\end{equation}
+Oletetaan, että jollain $n\geq 1$ pätee 
 \begin{equation*}
 \lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}\in C(A), \text{kun } \lambda_0+\lambda_1+\cdots+ \lambda_{n} =1.
  \end{equation*}
-%\begin{equation*}\begin{split} &x_1+\lambda_2 x_2+\cdots+\lambda_{n-1} x_{n-1}\in C(A), \\ &\text{kun } \lambda_0+\lambda_1+\cdots+ \lambda_{n-1} =1. \end{split} \end{equation*}
-Tällöin myös
+Tällöin konveksiuden ja kaavan \ref{konvsis} nojalla pätee 
 \begin{equation*}
 \begin{split}
 &a(\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n}x_n)+\lambda_{n+1} x_{n+1}\\=&a\lambda_0 x_0+a\lambda_1 x_1+\cdots+a\lambda_{n}x_n+\lambda_{n+1} x_{n+1}
 \in C(A),
 \end{split}
 \end{equation*}
-%\text{ kun }a+ \lambda_{n+1} =1.
-%\end{equation*}
-%kun $a+ \lambda_{n+1} =1$, eli 
-kun 
+kun $a+\lambda_{n+1} =1$. Siis $C(A)$ sisältää kaikki muotoa 
 \begin{equation*}
-\begin{split}
-a\lambda_0+a\lambda_1+\cdots+ a\lambda_{n}+ \lambda_{n+1}=&a(\lambda_0+\lambda_1+\cdots+ \lambda_{n})+ \lambda_{n+1}\\=&a+ \lambda_{n+1}=1.
-\end{split}
+\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},
+\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
+%\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
+\sum_{i=0}^{n}{\lambda_i}=1
 \end{equation*} 
-Siis konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista.
-%Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\cdots, a_k \in A$, $\lambda_0,\lambda_1,\cdots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että $$\sum_{i=0}^n \in A \lambda_i f_{a_i}\qquad \text{ missä } \sum_{i=0}^n \lambda_i =1.$$
-%Tällöin $C(A)=\bigcap_{j\in J} A_j$ on pienin konveksi joukko, jolla $A\subset C(A)$, jolloin $C(A)$ on joukon $A$ konveksi verho.\\
-%convex hull = kaikkien A:n sisältävien konveksien joukkojen leikkaus -> konveksi ja sisältää A:n.
+olevat lineaarikombinaatiot. 
+Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota.
 
-
-%\begin{maar}
-
-%\end{maar}
 \end{proof}
+
+%\begin{proof} Osoitetaan ensin, että kaikki kyseistä muotoa olevat lineaarikombinaatiot kuuluvat konveksiin peitteeseen.
+%Olkoon $x_0,x_1,\cdots, x_n, x_{n+1} \in A$, $a,\lambda_0,\lambda_1,\cdots, \lambda_n, \lambda_{n+1} \in \R$ ja $a,\lambda_i\geq 0$ kaikilla $ i\in\N$. Konveksiuden nojalla 
+%%$a x_1+b x_2 \in C(A)$, kun $a +b =1$. 
+%$\lambda_0 x_0+\lambda_1 x_1 \in C(A)$, kun $\lambda_0 +\lambda_1=1$.
+%%Edelleen $\lambda_1 (ax_1+b x_2)+\lambda_2 x_3 \in C(A)$, kun $\lambda_1 +\lambda_2 =1$ ja $a+b=1$. 
+%%ja edelleen $a (\lambda_0 x_0+\lambda_1 x_1)+\lambda_2 x_2=a\lambda_0 x_0+a\lambda_1  x_1+\lambda_2 x_2 \in C(A)$, kun $\lambda_0 +\lambda_1 =1$ ja $a+\lambda_2=1$, eli kun $a\lambda_0+a\lambda_1+\lambda_2=a(\lambda_0+\lambda_1)+\lambda_2=a+\lambda_2=1$. 
+%Oletetaan, että jollain $n\geq 1$ 
+%\begin{equation*}
+%\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}\in C(A), \text{kun } \lambda_0+\lambda_1+\cdots+ \lambda_{n} =1.
+% \end{equation*}
+%%\begin{equation*}\begin{split} &x_1+\lambda_2 x_2+\cdots+\lambda_{n-1} x_{n-1}\in C(A), \\ &\text{kun } \lambda_0+\lambda_1+\cdots+ \lambda_{n-1} =1. \end{split} \end{equation*}
+%Tällöin myös
+%\begin{equation*}
+%\begin{split}
+%&a(\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n}x_n)+\lambda_{n+1} x_{n+1}\\=&a\lambda_0 x_0+a\lambda_1 x_1+\cdots+a\lambda_{n}x_n+\lambda_{n+1} x_{n+1}
+%\in C(A),
+%\end{split}
+%\end{equation*}
+%%\text{ kun }a+ \lambda_{n+1} =1.
+%%\end{equation*}
+%%kun $a+ \lambda_{n+1} =1$, eli 
+%kun 
+%\begin{equation*}
+%\begin{split}
+%a\lambda_0+a\lambda_1+\cdots+ a\lambda_{n}+ \lambda_{n+1}=&a(\lambda_0+\lambda_1+\cdots+ \lambda_{n})+ \lambda_{n+1}\\=&a+ \lambda_{n+1}=1.
+%\end{split}
+%\end{equation*} 
+%Siis konveksi verho $C(A)$ sisältää kaikki lineaarikombinaatiot joukon $A$ vektoreista.
+%%Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\cdots, a_k \in A$, $\lambda_0,\lambda_1,\cdots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että $$\sum_{i=0}^n \in A \lambda_i f_{a_i}\qquad \text{ missä } \sum_{i=0}^n \lambda_i =1.$$
+%%Tällöin $C(A)=\bigcap_{j\in J} A_j$ on pienin konveksi joukko, jolla $A\subset C(A)$, jolloin $C(A)$ on joukon $A$ konveksi verho.\\
+%%convex hull = kaikkien A:n sisältävien konveksien joukkojen leikkaus -> konveksi ja sisältää A:n.
+
+
+%%\begin{maar}
+
+%%\end{maar}
+%\end{proof}
 
 \chapter{Banachin avaruus}\label{Banach}
 
