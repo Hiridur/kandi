@@ -252,7 +252,22 @@ Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos $d(x_1,x_2)=d'(h(x_
 \begin{esim}
 Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruudessa $\R^2$.
 \end{esim}
-
+\begin{lem}
+Metrisen avaruuden $(X,d)$ joukolle $X$ on aina olemassa sellainen metriikka $d'$, jolla joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+\end{lem}
+\begin{proof} 
+Olkoon $(X,d)$ metrinen avaruus. Tällöin myös
+$$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
+on metriikka joukossa $X$, sillä kaikilla $x,y,z\in X$:
+\begin{itemize}
+\item[(M1)]$d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}\leq \dfrac{d(x,y)+d(y,z)}{1+d(x,y)+d(y,z)}$
+$$= \dfrac{d(x,y)}{1+d(x,y)+d(y,z)}+ \dfrac{d(y,z)}{1+d(x,y)+d(y,z)}$$
+$$\leq \dfrac{d(x,y)}{1+d(x,y)}+ \dfrac{d(y,z)}{1+d(y,z)}=d'(x,y)+d'(y,z)$$
+\item[(M2)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=\dfrac{d(y,x)}{1+d(y,x)}=d'(y,x)$
+\item[(M3)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=0$, jos ja vain jos $d(x,y)=0$, eli jos ja vain jos $x=y$.
+\end{itemize} 
+Tällöin joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+\end{proof}
 
 \chapter{Konveksi verho}\label{konverho}
 Tässä luvussa käsitellään konveksisuutta ja konveksia verhoa.
@@ -318,8 +333,8 @@ c_0 a+c_1 b \in C(A),\text{ kun }c_0,c_1\geq 0\text{ ja }c_0 +c_1=1.
 %Konveksi verho $C(A)$ on konveksi, joten kaikilla $x_0,x_1\in C(A)$ pätee $[x_0,x_1]\subset C(A)$, 
 %toisin sanoen, $(1-t)x_0+tx_1\in A$ kaikilla $0\leq t \leq 1$. 
 Olkoon $x_0,x_1,\dots, x_n, x_{n+1} \in A$, 
-$\lambda_0,\lambda_1,\dots, \lambda_n, \lambda_{n+1},d \in \R$ 
-ja $\lambda_i,d\geq 0$ kaikilla $ i\in\N$. 
+$d_0,d_1,\dots, d_n,e, \lambda_{n+1} \in \R$ 
+ja $d_i,e, \lambda_{n+1}\geq 0$ kaikilla $ i\in\N$. 
 %Tällöin erityisesti 
 %$\lambda_0 x_0+\lambda_1 x_1 \in C(A)$, kun $\lambda_0 +\lambda_1=1$.
 %\begin{equation}\lambda_0 x_0+\lambda_1 x_1 \in C(A),
@@ -327,16 +342,18 @@ ja $\lambda_i,d\geq 0$ kaikilla $ i\in\N$.
 %\end{equation}
 Oletetaan, että jollain $n\geq 1$ pätee 
 \begin{equation*}
-\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}\in C(A), \text{kun } \lambda_0+\lambda_1+\cdots+ \lambda_{n} =1.
+d_0 x_0+d_1 x_1+\cdots+d_{n} x_{n}\in C(A), \text{kun } d_0+d_1+\cdots+ d_{n} =1.
  \end{equation*}
 Tällöin konveksiuden ja kaavan \ref{konvsis} nojalla pätee 
 \begin{equation*}
 \begin{split}
-&a(\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n}x_n)+\lambda_{n+1} x_{n+1}\\=&a\lambda_0 x_0+a\lambda_1 x_1+\cdots+a\lambda_{n}x_n+\lambda_{n+1} x_{n+1}
+&e(d_0 x_0+d_1 x_1+\cdots+d_{n}x_n)+\lambda_{n+1} x_{n+1}\\
+=&e d_0 x_0+e d_1 x_1+\cdots+e d_{n}x_n+\lambda_{n+1} x_{n+1}
 \in C(A),
 \end{split}
 \end{equation*}
-kun $a+\lambda_{n+1} =1$. Siis $C(A)$ sisältää kaikki muotoa 
+kun $e+\lambda_{n+1} =1$. Valitsemalla $ed_i= \lambda_{i}$ kaikilla $i\in {0,1,\dots,n}$ saadaan $$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+ \lambda_{n+1} x_{n+1}
+\in C(A).$$ Siis $C(A)$ sisältää kaikki muotoa 
 \begin{equation*}
 \lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},
 \quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
