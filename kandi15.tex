@@ -252,22 +252,42 @@ Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos $d(x_1,x_2)=d'(h(x_
 \begin{esim}
 Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruudessa $\R^2$.
 \end{esim}
-\begin{lem}
-Metrisen avaruuden $(X,d)$ joukolle $X$ on aina olemassa sellainen metriikka $d'$, jolla joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+
+\begin{lem} Olkoon $(X,d)$ metrinen avaruus. Tällöin
+$$d'\colon X\times X \rightarrow \R,\quad d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
+on metriikka joukossa $X$ ja joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
 \end{lem}
-\begin{proof} 
-Olkoon $(X,d)$ metrinen avaruus. Tällöin myös
-$$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
-on metriikka joukossa $X$, sillä kaikilla $x,y,z\in X$:
+\begin{proof}
+Olkoon $(X,d)$ metrinen avaruus. Kaikilla $x,y,z\in X$ pätee
 \begin{itemize}
-\item[(M1)]$d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}\leq \dfrac{d(x,y)+d(y,z)}{1+d(x,y)+d(y,z)}$
-$$= \dfrac{d(x,y)}{1+d(x,y)+d(y,z)}+ \dfrac{d(y,z)}{1+d(x,y)+d(y,z)}$$
-$$\leq \dfrac{d(x,y)}{1+d(x,y)}+ \dfrac{d(y,z)}{1+d(y,z)}=d'(x,y)+d'(y,z)$$
-\item[(M2)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=\dfrac{d(y,x)}{1+d(y,x)}=d'(y,x)$
+\item[(M1)]$d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}
+\leq \dfrac{d(x,y)+d(y,z)}{1+d(x,y)+d(y,z)}$\\
+$\phantom{d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}}
+= \dfrac{d(x,y)}{1+d(x,y)+d(y,z)}+ \dfrac{d(y,z)}{1+d(x,y)+d(y,z)}$\\
+$\phantom{d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}}
+\leq \dfrac{d(x,y)}{1+d(x,y)}+ \dfrac{d(y,z)}{1+d(y,z)}=d'(x,y)+d'(y,z),$
+\item[(M2)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}
+=\dfrac{d(y,x)}{1+d(y,x)}=d'(y,x)$ ja
 \item[(M3)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=0$, jos ja vain jos $d(x,y)=0$, eli jos ja vain jos $x=y$.
 \end{itemize} 
 Tällöin joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
 \end{proof}
+
+%\begin{lem}
+%Olkoon $(X,d)$ metrinen avaruus. 
+%Jokaista metristä avaruutta $(X,d)$ kohden 
+%on olemassa sellainen rajoitettu kuvaus 
+%$d'\colon X \rightarrow \R$, joka on homotooppinen metriikan $d$ kanssa. 
+%\end{lem}
+%\begin{lem}
+%Metrisen avaruuden $(X,d)$ joukolle $X$ on aina olemassa sellainen metriikka $d'$, jolla joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+%\end{lem}
+%\begin{proof} 
+%Olkoon $(X,d)$ metrinen avaruus. Tällöin myös
+%$$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
+%on metriikka joukossa $X$, sillä kaikilla $x,y,z\in X$:
+%Tällöin joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+%\end{proof}
 
 \chapter{Konveksi verho}\label{konverho}
 Tässä luvussa käsitellään konveksisuutta ja konveksia verhoa.
@@ -418,6 +438,11 @@ Jono $(x_n\colon n\in \N$
 \end{maar}
 
 \begin{maar}\emph{Separoituva avaruus.} Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\cdots\}=A\subset X$, toisin sanoen, jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.
+\end{maar}
+
+\begin{maar}
+\emph{Homotopia}\\
+Kaksi kuvausta ovat homotooppisia keskenään, jos ne voidaan muuntaa jatkuvalla kuvauksella toisikseen. Olkoon $f,g\colon X\rightarrow Y$. Sanomme kuvauksen $f$ olevan homotooppinen kuvauksen $g$ kanssa, jos on olemassa jatkuva $h\colon X \times I \rightarrow Y$, jolla $h(x,0)=f(x)$ ja $h(x,1)=g(x)$ kaikilla $x\in X$. Merkitsemme tällöin $f\simeq g$ ja $h\colon f\simeq g$. Kuvaus $h$ on homotopia, joka yhdistää kuvaukset $f$ ja $g$.
 \end{maar}
 
 
