@@ -253,7 +253,7 @@ Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos $d(x_1,x_2)=d'(h(x_
 Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruudessa $\R^2$.
 \end{esim}
 
-\begin{lem} Olkoon $(X,d)$ metrinen avaruus. Tällöin
+\begin{lem}\label{rajmetri} Olkoon $(X,d)$ metrinen avaruus. Tällöin
 $$d'\colon X\times X \rightarrow \R,\quad d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
 on metriikka joukossa $X$ ja joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
 \end{lem}
@@ -270,7 +270,7 @@ $\phantom{d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}}
 =\dfrac{d(y,x)}{1+d(y,x)}=d'(y,x)$ ja
 \item[(M3)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=0$, jos ja vain jos $d(x,y)=0$, eli jos ja vain jos $x=y$.
 \end{itemize} 
-Tällöin joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+Joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$, sillä $d(x,y)\leq 1+d(x,y)$ kaikilla $x,y\in X$.
 \end{proof}
 
 %\begin{lem}
@@ -455,17 +455,9 @@ Jokaista metristä avaruutta $(X,d)$ kohti on olemassa normiavaruus $Z$ ja upotu
 %\vspace{0.5cm}
 
 %\noindent\emph{Todistus.} 
-\begin{proof} Olkoon $(X,d)$ metrinen avaruus. Tällöin myös
+\begin{proof} Olkoon $(X,d)$ metrinen avaruus. Tällöin 
 $$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
-on metriikka joukossa $X$, sillä kaikilla $x,y,z\in X$:
-\begin{itemize}
-\item[(M1)]$d'(x,z)=\dfrac{d(x,z)}{1+d(x,z)}\leq \dfrac{d(x,y)+d(y,z)}{1+d(x,y)+d(y,z)}$
-$$= \dfrac{d(x,y)}{1+d(x,y)+d(y,z)}+ \dfrac{d(y,z)}{1+d(x,y)+d(y,z)}$$
-$$\leq \dfrac{d(x,y)}{1+d(x,y)}+ \dfrac{d(y,z)}{1+d(y,z)}=d'(x,y)+d'(y,z)$$
-\item[(M2)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=\dfrac{d(y,x)}{1+d(y,x)}=d'(y,x)$
-\item[(M3)]$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)}=0$, jos ja vain jos $d(x,y)=0$, eli jos ja vain jos $x=y$.
-\end{itemize} 
-Tällöin joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
+on lemman \ref{rajmetri} mukaan metriikka joukossa $X$ ja joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
 
 Olkoon $Z$ joukon $X$ kaikkien rajoitettujen jatkuvien funktioiden joukko. Asetetaan
 $$|f_1|=\sup_{x\in X} |f_1(x)| \, , \qquad f_1\in Z$$
