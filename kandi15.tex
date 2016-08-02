@@ -141,7 +141,7 @@ Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
 \begin{equation*}
 |f+g|(x)=|f(x)+g(x)|\leq|f(x)|+|g(x)|\leq||f||+||g||
 \end{equation*}
-kaikilla $x\in D$, joten $||f+g||\leq||f||+||g||$.
+kaikilla $x\in D$, joten $||f+g||=\sup\{|f(x)+g(x)|\}\leq||f||+||g||$.
 
 \item[(N2)] Olkoon $f\in Raj(D,\R )$ ja $x\in D$. Tällöin
 \begin{equation*}
@@ -220,9 +220,9 @@ Vastaavasti olkoon $y\in A$, jolloin kaikilla $x\in X$ pätee $d(y,A)-d(x,A)\leq
 \begin{maar} \emph{Homeomorfismi} 
 tarkoittaa kuvausta $f\colon X\rightarrow Y$, jolla 
 \begin{itemize}
-\item[(1)] $f$ on bijektio,
-\item[(2)] $f$ on jatkuva,
-\item[(3)] $f^{-1} \colon Y\rightarrow X$ on jatkuva. 
+\item[(H1)] $f$ on bijektio,
+\item[(H2)] $f$ on jatkuva,
+\item[(H3)] $f^{-1} \colon Y\rightarrow X$ on jatkuva. 
 \end{itemize}
 \end{maar}
 
@@ -252,7 +252,16 @@ Tällöin kuvaus $h\colon X\rightarrow X'$ on isometria, jos $d(x_1,x_2)=d'(h(x_
 \begin{esim}
 Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruudessa $\R^2$.
 \end{esim}
-
+\begin{lem}\label{isolemma} Bijektiivinen isometria on aina homeomorfismi.
+\end{lem}
+\begin{proof}
+Olkoon $(X,d)$ ja $(X',d')$ metrisiä avaruuksia ja olkoon kuvaus $h\colon X\rightarrow X'$ isometria. Tällöin $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$. Tällöin
+\begin{itemize}
+\item[(H1)] $h$ on määritelmän nojalla bijektio,
+\item[(H2)] Kaikilla $\epsilon>0$ on olemassa $\delta>0$, jolla pätee: Jos $d(x_1,x_2)<\epsilon$, niin $d'(h(x_1),h(x_2))=d(x_1,x_2)<\epsilon=\delta$. Siis $h$ on jatkuva.
+\item[(H3)] Edellisen kohdan ja isometrisuuden nojalla myös $f^{-1} \colon Y\rightarrow X$ on jatkuva. 
+\end{itemize}
+\end{proof}
 \begin{lem}\label{rajmetri} Olkoon $(X,d)$ metrinen avaruus. Tällöin
 $$d'\colon X\times X \rightarrow \R,\quad d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
 on metriikka joukossa $X$ ja joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
@@ -459,35 +468,26 @@ Jokaista metristä avaruutta $(X,d)$ kohti on olemassa normiavaruus $Z$ ja upotu
 $$d'(x,y)=\dfrac{d(x,y)}{1+d(x,y)} \, , \qquad x,y\in X$$
 on lemman \ref{rajmetri} mukaan metriikka joukossa $X$ ja joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$.
 
-Olkoon $D$ epätyhjä joukko ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. Yhtälö $||f||=\sup\{|f(x)|\colon x\in D\}$ määrittelee normin avaruudessa $Raj(D,\R )$. 
-Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
+%Olkoon $D$ epätyhjä joukko ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. Yhtälö $||f||=\sup\{|f(x)|\colon x\in D\}$ määrittelee normin avaruudessa $Raj(D,\R )$. 
+%Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
 
-Olkoon $Z=$ joukon $X$ kaikkien rajoitettujen %jatkuvien 
-funktioiden joukko. Asetetaan
-$$|f_1|=\sup_{x\in X} |f_1(x)| \, , \qquad f_1\in Z$$
-ja
-$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in X} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
+Olkoon $Z=Raj(X,\R )$ joukon $X$ kaikkien rajoitettujen %jatkuvien 
+reaaliarvoisten funktioiden vektoriavaruus. Tällöin avaruudella $Z$ on määritelmän \ref{sup-normi} mukaan muotoa
+$$||f_1||=\sup_{x\in X} |f_1(x)| \, , \qquad f_1\in Z$$
+oleva sup-normi.
+%ja
+%$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in X} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
 
-Tällöin $Z$ on normiavaruus, sillä kaikilla $g_1,g_2\in Z, a\in \R$:
-\begin{itemize}
-\item[(N1)] $|g_1+g_2|=\sup_{x\in X} |g_1(x)+g_2(x)|\\
-\phantom{|g_1+g_2|} \leq \sup_{x\in X} |g_1(x)|+\sup_{x\in X} |g_2(x)|=|g_1|+|g_2|$
-%\[\begin{split}|g_1+g_2|=&\sup_{x\in X} |g_1(x)+g_2(x)|\\\leq &\sup_{x\in X} |g_1(x)|+\sup_{x\in X} |g_2(x)|=|g_1|+|g_2|\end{split}\]
-\item[(N2)] $|ag_1|=\sup_{x\in X} |ag_1(x)|=\sup_{x\in X} (|a||g_1(x)|)\\
-\phantom{|a_{1ag}} =|a|\sup_{x\in X} |g_1(x)|=|a||g_1|$
-\item[(N3)] $|g_1|=\sup_{x\in X} |g_1(x)|=0\implies g_1(x)=0\qquad$ kaikilla $ x\in X$
-\end{itemize}
-
-
-
-Seuraavaksi määritellään homeomorfismi $h\colon X\rightarrow h(X)\subset Z$. Tätä varten asetamme funktion $f_x\in Z$ jokaiselle $x\in X$ yhtälön $f_x (y)=d(x,y)$ mukaisesti, eli
+Seuraavaksi määritellään homeomorfismi $h\colon X\rightarrow h(X)\subset Z$. Tätä varten asetetaan funktio $f_x\in Z$ jokaiselle $x\in X$ yhtälön $f_x (y)=d'(x,y)$ mukaisesti, eli
 %Asetamme 
-$$h(x)=f_x\, ,\qquad x\in X. $$ 
-Tällöin pätee 
-$$d(f_{x_1} ,f_{x_2} ) \geq |d(x_1 , x_2 )-d(x_2 , x_2 )|=d(x_1 ,x_2 ).$$ 
+$$h(x)=f_x\, ,\qquad x\in X. $$  Tällöin pätee 
+%$$d(f_{x_1} ,f_{x_2} ) \geq |d(x_1 , x_2 )-d(x_2 , x_2 )|=d(x_1 ,x_2 ).$$ 
+$$||f_{x_1} - f_{x_2} ||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )| \geq |d'(x_1 , x_2 )-d'(x_2 , x_2 )|=d'(x_1 ,x_2 ).$$ 
 Toisaalta mielivaltaiselle $y\in X$ pätee
-$$|f_{x_1} (y), f_{x_2} (y)|=|d(x_1 ,y )-d(x_2 ,y)|\leq d(x_1 , x_2 ),$$
-jolloin siis $d(f_{x_1},f_{x_2})\leq d(x_1 , x_2 )$. Edeltävistä epäyhtälöistä saadaan $d(f_{x_1},f_{x_2})= d(x_1 , x_2 )$, joka osoittaa, että kuvaus $h$ säilyttää pisteiden väliset etäisyydet ja on siten homeomorfismi.\\
+$$|f_{x_1} (y)- f_{x_2} (y)|=|d'(x_1 ,y )-d'(x_2 ,y)|\leq d'(x_1 , x_2 ),$$
+jolloin siis $||f_{x_1}-f_{x_2}||\leq d(x_1 , x_2 )$. Edeltävistä epäyhtälöistä saadaan $d(f_{x_1},f_{x_2})= d'(x_1 , x_2 )$, jolloin kuvaus $h\colon X\rightarrow h(X)$  on isometria.
+
+Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X,x\neq x'$ pätee $$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_x' (x)$$ ja edelleen $h(x)=f_x \neq f_x'=h(x') $. Lemman \ref{isolemma} nojalla funktio $h$ on homeomorfismi.\\
 %\newpage
 Osoitetaan, että $hX$ on suljettu konveksissa verhossa $C(hX)$. Tavoitteena on osoittaa, että minkä tahansa jonon $f_{x_n}\in hX$ raja-arvo kuuluu joukkoon $ hX$. Olkoon $f\in C(hX)$ ja määritellään 
 $$f=\lim_{n\rightarrow\infty} f_{x_n} \, , \qquad f_{x_n}\in hX.$$ 
