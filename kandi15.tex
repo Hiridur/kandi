@@ -336,7 +336,7 @@ Siis $B= C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$.
 \end{proof}
 
 %Seuraavasta lemmasta on kaksi versiota, kumpi parempi?
-\begin{lem} Olkoon $E$ normiavaruus ja $A\subset E$. 
+\begin{lem}\label{konveksilineaari} Olkoon $E$ normiavaruus ja $A\subset E$. 
 %Konveksi verho $C(A)$ on joukon $A$ vektorien muotoa $$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ olevien lineaarikombinaatioiden muodostama joukko. 
 Konveksi verho $C(A)$ on muotoa 
 $$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ 
@@ -486,12 +486,12 @@ $$||f_{x_1} - f_{x_2} ||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )| \geq |d'(x_1 
 Toisaalta mielivaltaiselle $y\in X$ pätee
 $$|f_{x_1} (y)- f_{x_2} (y)|=|d'(x_1 ,y )-d'(x_2 ,y)|\leq d'(x_1 , x_2 ),$$
 jolloin siis $||f_{x_1}-f_{x_2}||\leq d(x_1 , x_2 )$. Edeltävistä epäyhtälöistä saadaan $d(f_{x_1},f_{x_2})= d'(x_1 , x_2 )$, jolloin kuvaus $h\colon X\rightarrow h(X)$  on isometria.
-
-Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X,x\neq x'$ pätee $$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_x' (x)$$ ja edelleen $h(x)=f_x \neq f_x'=h(x') $. Lemman \ref{isolemma} nojalla funktio $h$ on homeomorfismi.\\
+Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X$, $x\neq x'$ pätee $$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_x' (x)$$ ja edelleen $h(x)=f_x \neq f_x'=h(x') $. Lemman \ref{isolemma} nojalla funktio $h$ on homeomorfismi.
 %\newpage
-Osoitetaan, että $hX$ on suljettu konveksissa verhossa $C(hX)$. Tavoitteena on osoittaa, että minkä tahansa jonon $f_{x_n}\in hX$ raja-arvo kuuluu joukkoon $ hX$. Olkoon $f\in C(hX)$ ja määritellään 
+
+Seuraavaksi osoitetaan, että $hX$ on suljettu konveksissa verhossa $C(hX)$. Tavoitteena on osoittaa, että minkä tahansa jonon $f_{x_n}\in hX$ raja-arvo kuuluu joukkoon $ hX$. Olkoon $f\in C(hX)$ ja määritellään 
 $$f=\lim_{n\rightarrow\infty} f_{x_n} \, , \qquad f_{x_n}\in hX.$$ 
-Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\cdots, a_k \in X$, $\lambda_0,\lambda_1,\cdots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että $$f=\sum_{i=0}^k \lambda_i f_{a_i}\qquad \text{ missä } \sum_{i=0}^k \lambda_i =1.$$
+Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin lemman \ref{konveksilineaari} nojalla $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\cdots, a_k \in X$, $\lambda_0,\lambda_1,\cdots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että $$f=\sum_{i=0}^k \lambda_i f_{a_i}\qquad \text{ missä } \sum_{i=0}^k \lambda_i =1.$$
 Tällöin on ainakin yksi $i\leq k$, jolla $\lambda_i \geq 1/(k+1)$. Tämä seuraa siitä, että $$\sum_{i=0}^k \frac{1}{k+1}=k\cdot \dfrac{1}{k+1}=\dfrac{k}{k+1}<1 .$$ Tällöin voidaan vaihtaa $\lambda_0$ ja $\lambda_i$ keskenään ja vastaavasti $a_0$ ja $a_i$ keskenään, jolloin saadaan $\lambda_0\geq 1/(k+1)$. Jos jollain $i\neq j$ ja $i,j\leq k$ %ja $i,j\in \N$ 
 pätee $ a_i=a_j$, niin on mahdollista valita uudet $$a_0,a_1,\cdots a_i,\cdots, a_{j-1},a_{j+1},\cdots a_{k}$$ ja vastaavat $$\lambda_0,\lambda_1,\cdots, (\lambda_i+\lambda_j),\cdots ,
 \lambda_{j-1},
