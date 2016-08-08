@@ -50,7 +50,11 @@
 
 \chapter{Johdanto}\label{johd}
 
-Tämän tutkielman tarkoituksena on esitellä Kuratowskin upotuslause jne.. Luku \ref{normi}, ks.\ \cite{Topo1}
+Tämän tutkielman tarkoituksena on todistaa Kuratowskin upotuslause. Lause on nimetty puolalaisen matemaatikon Kazimierz Kuratowskin mukaan. Osa lauseen todistuksesta on tehtävänä kurssikirjassa Topologia 1, joka on yksi matematiikan pääaineopiskelijoiden aineopintoja.
+\\
+\\
+Kazimierz Kuratowski (2.2.1896 - 18.6.1980) oli puolalainen matemaatikko, joka keskittyi tutkimuksessaan abstraktiin topologiaan ja metrisiin struktuureihin. 
+ jne.. Luku \ref{normi}, ks.\ \cite{Topo1}
 %Tämän tutkielman tarkoituksena on esitellä todennäköisyys- ja momenttigeneroivia
 %funktioita. Yleisesti generoiva funktio on hyödyllinen esimerkiksi kombinatoriikassa. 
 %Matematiikan yliopisto-opinnoissa generoivat funktiot tulevat yleensä ensimmäisen
@@ -58,7 +62,7 @@ Tämän tutkielman tarkoituksena on esitellä Kuratowskin upotuslause jne.. Luku
 
 \chapter{Funktion rajoittuma, normi ja sup-normi}\label{normi}
 
-Tässä kappaleessa esitellään vektori- ja normiavaruuksien ja näiden funktioiden perusominaisuuksia. Enemmän aiheesta löytyy kirjoista \cite{Topo1} ja \cite{Topo2}.
+Tässä kappaleessa esitellään vektori- ja normiavaruuksien ja näiden funktioiden perusominaisuuksia. \cite{Topo1}
 \begin{maar}
 \emph{Vektoriavaruus}\\
 Joukko $V$ on $\R$-kertoiminen vektoriavaruus, jos kaikkiin $v,w\in V$ ja $a\in \R$ on liitetty yksikäsitteinen summa $v+w\in V$ ja tulo $av\in V$ niin, että seuraavat ominaisuudet ovat voimassa:
@@ -166,7 +170,7 @@ Tapauksessa $D=\N$ saadaan kaikkien rajoitettujen jonojen joukko $raj(\N,\R).$ J
 
 
 \chapter{Metrinen avaruus}\label{metrinen}
-Tässä luvussa esitellään metristen avaruuksien ominaisuuksia.
+Tässä luvussa esitellään metristen avaruuksien ominaisuuksia. Metrisiä avaruuksia käsitellään syvemmin kirjassa Topologia I% \cite{Topo1} 
 \begin{maar} \emph{Metrinen avaruus} 
 on pari $(X,d)$, jossa $X$ on joukko ja $d$ on \emph{metriikka} joukossa $X$.
 Tällöin $d\colon X\times X\rightarrow \R_+$ on kuvaus, jolle pätee seuraavat ominaisuudet kaikilla $x,y,z\in X$:
@@ -227,7 +231,7 @@ tarkoittaa kuvausta $f\colon X\rightarrow Y$, jolla
 \end{maar}
 
 \begin{maar}\emph{Upotus} 
-tarkoittaa kuvausta $f\colon X\rightarrow Y$, joka määrittelee homeomorfismin $f_1\colon X\rightarrow f[X]$, jolla $f_1(x)=f(x)$ kaikilla $x\in X$. %Tällöin funktiolla $f$ pätee seuraavat ehdot:
+tarkoittaa kuvausta $f\colon X\rightarrow Y$, joka määrittelee homeomorfismin $f_1\colon X\rightarrow fX$, jolla $f_1(x)=f(x)$ kaikilla $x\in X$. %Tällöin funktiolla $f$ pätee seuraavat ehdot:
 %\begin{itemize}
 %\item[(1)] $f$ on injektio,
 %\item[(2)] $f$ on jatkuva,
@@ -299,7 +303,7 @@ Joukon $X$ pisteiden $d'$-etäisyydet toisistaan ovat korkeintaan $1$, sillä $d
 %\end{proof}
 
 \chapter{Konveksi verho}\label{konverho}
-Tässä luvussa käsitellään konveksisuutta ja konveksia verhoa.
+Tässä luvussa esitellään konveksius, konveksi verho ja tämän ominaisuuksia. Näitä käsitteitä tarkastellaan syvemmin kirjoissa Topologia I ja Topologia II.
 \begin{maar}%%Konveksi joukko sisältää kaikkien alkioidensa väliset janapolut. 
 \emph{Konveksius.}
  Olkoon $E$ normiavaruus, $A\subset E$ ja $a,b\in A$. Yhtälö 
@@ -339,7 +343,8 @@ Siis $B= C(A)$ ja $C(A)$ on pienin konveksi joukko, jolla $A\subset C(A)$.
 \begin{lem}\label{konveksilineaari} Olkoon $E$ normiavaruus ja $A\subset E$. 
 %Konveksi verho $C(A)$ on joukon $A$ vektorien muotoa $$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ olevien lineaarikombinaatioiden muodostama joukko. 
 Konveksi verho $C(A)$ on muotoa 
-$$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ 
+$$\sum_{i=0}^n \lambda_i x_i,\qquad \text{ missä } x_i\in A, \lambda_i\geq0\text{ ja } \sum_{i=0}^n \lambda_i =1 $$ 
+%$$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},\quad\text{missä } x_i\in A, \lambda_i\geq0\text{ ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$$ 
 %$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}$ 
 olevien lineaarikombinaatioiden muodostama joukko.
 %, missä $x_i\in A, \lambda_i\geq0\text{, ja }\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1$. 
@@ -390,7 +395,7 @@ kun $e+\lambda_{n+1} =1$. Valitsemalla $ed_i= \lambda_{i}$ kaikilla $i\in {0,1,\
 \sum_{i=0}^{n}{\lambda_i}=1
 \end{equation*} 
 olevat lineaarikombinaatiot. 
-Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota.
+Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota. 
 
 \end{proof}
 
@@ -446,7 +451,7 @@ Jono $(x_n\colon n\in \N$
 \begin{maar}Banachin avaruus on täydellinen normiavaruus.
 \end{maar}
 
-\begin{maar}\emph{Separoituva avaruus.} Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\cdots\}=A\subset X$, toisin sanoen, jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.
+\begin{maar}\emph{Separoituva avaruus.} Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\dots\}=A\subset X$, toisin sanoen, jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.
 \end{maar}
 
 \begin{maar}
@@ -478,26 +483,42 @@ oleva sup-normi.
 %ja
 %$$d(f_1,f_2)=|f_1-f_2| = \sup_{x\in X} |f_1 (x)-f_2 (x)| \, , \qquad f_1, f_2 \in Z .$$
 
-Seuraavaksi määritellään homeomorfismi $h\colon X\rightarrow h(X)\subset Z$. Tätä varten asetetaan funktio $f_x\in Z$ jokaiselle $x\in X$ yhtälön $f_x (y)=d'(x,y)$ mukaisesti, eli
+Seuraavaksi määritellään homeomorfismi $h\colon X\rightarrow hX\subset Z$. Tätä varten asetetaan funktio $f_x\in Z$ jokaiselle $x\in X$ yhtälön $f_x (y)=d'(x,y)$ mukaisesti, eli
 %Asetamme 
 $$h(x)=f_x\, ,\qquad x\in X. $$  Tällöin pätee 
 %$$d(f_{x_1} ,f_{x_2} ) \geq |d(x_1 , x_2 )-d(x_2 , x_2 )|=d(x_1 ,x_2 ).$$ 
 $$||f_{x_1} - f_{x_2} ||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )| \geq |d'(x_1 , x_2 )-d'(x_2 , x_2 )|=d'(x_1 ,x_2 ).$$ 
 Toisaalta mielivaltaiselle $y\in X$ pätee
 $$|f_{x_1} (y)- f_{x_2} (y)|=|d'(x_1 ,y )-d'(x_2 ,y)|\leq d'(x_1 , x_2 ),$$
-jolloin siis $||f_{x_1}-f_{x_2}||\leq d(x_1 , x_2 )$. Edeltävistä epäyhtälöistä saadaan $d(f_{x_1},f_{x_2})= d'(x_1 , x_2 )$, jolloin kuvaus $h\colon X\rightarrow h(X)$  on isometria.
-Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X$, $x\neq x'$ pätee $$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_x' (x)$$ ja edelleen $h(x)=f_x \neq f_x'=h(x') $. Lemman \ref{isolemma} nojalla funktio $h$ on homeomorfismi.
+jolloin siis $$||f_{x_1}-f_{x_2}||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )|\leq d'(x_1 , x_2 ).$$ Edeltävistä epäyhtälöistä saadaan $||f_{x_1}-f_{x_2}||= d'(x_1 , x_2 )$, jolloin kuvaus $h\colon X\rightarrow hX$  on isometria.
+Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X$, $x\neq x'$ pätee $$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_x' (x)$$ ja edelleen 
+$$h(x)=f_x \neq f_x'=h(x') .$$ 
+Lemman \ref{isolemma} nojalla funktio $h$ on homeomorfismi kuvajoukolle $hX$.
 %\newpage
 
-Seuraavaksi osoitetaan, että $hX$ on suljettu konveksissa verhossa $C(hX)$. Tavoitteena on osoittaa, että minkä tahansa jonon $f_{x_n}\in hX$ raja-arvo kuuluu joukkoon $ hX$. Olkoon $f\in C(hX)$ ja määritellään 
-$$f=\lim_{n\rightarrow\infty} f_{x_n} \, , \qquad f_{x_n}\in hX.$$ 
-Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin lemman \ref{konveksilineaari} nojalla $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\cdots, a_k \in X$, $\lambda_0,\lambda_1,\cdots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että $$f=\sum_{i=0}^k \lambda_i f_{a_i}\qquad \text{ missä } \sum_{i=0}^k \lambda_i =1.$$
-Tällöin on ainakin yksi $i\leq k$, jolla $\lambda_i \geq 1/(k+1)$. Tämä seuraa siitä, että $$\sum_{i=0}^k \frac{1}{k+1}=k\cdot \dfrac{1}{k+1}=\dfrac{k}{k+1}<1 .$$ Tällöin voidaan vaihtaa $\lambda_0$ ja $\lambda_i$ keskenään ja vastaavasti $a_0$ ja $a_i$ keskenään, jolloin saadaan $\lambda_0\geq 1/(k+1)$. Jos jollain $i\neq j$ ja $i,j\leq k$ %ja $i,j\in \N$ 
-pätee $ a_i=a_j$, niin on mahdollista valita uudet $$a_0,a_1,\cdots a_i,\cdots, a_{j-1},a_{j+1},\cdots a_{k}$$ ja vastaavat $$\lambda_0,\lambda_1,\cdots, (\lambda_i+\lambda_j),\cdots ,
-\lambda_{j-1},
-\lambda_{j+1},\cdots, \lambda_{k-1}.$$ 
-Voidaan siis valita sellaiset $a_0,a_1,\cdots, a_k$, jotka ovat erillisiä ja sellaiset $\lambda_0,\lambda_1,\cdots \lambda_k$, että $\lambda_0$ täyttää ehdon $\lambda_0\geq 1/(k+1)$. Tällöin $$d(f,f_{x_n})\geq |f(x_n)-f_{x_n}(x_n)|=|f(x_n)|\geq \lambda_0 f_{a_0}(x_n)\geq \dfrac{1}{k+1}d(a_0,x_n).$$
-Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. Siis $ f=f_{a_0}\in hX$ pätee.
+Seuraavaksi osoitetaan, että $hX$ on suljettu konveksissa verhossa $C(hX)$. 
+Tavoitteena on osoittaa, että avaruuden $hX$ alkioista muodostuvan suppenevan jonon raja-arvo kuuluu avaruuteen $ hX$. 
+Olkoon $f\in C(hX)$, $f_{x_i}\in hX$ ja $ x_i\in X$ kaikilla $ i\in \N$. 
+Oletetaan, että 
+$$f=\lim_{n\rightarrow\infty} f_{x_n}.$$ 
+%$$f=\lim_{n\rightarrow\infty} f_{x_n}  , \qquad f_{x_i}\in hX \text{ kaikilla }x_{i}\in X, i\in \N.$$ 
+Tällöin koska $f$ kuuluu konveksiin verhoon $C(hX)$, niin lemman \ref{konveksilineaari} nojalla $f$ on lineaarikombinaatio vektorialiavaruuden $hX$ vektoreista. Tällöin olkoon $a_0,a_1,\dots, a_k \in X$, $\lambda_0,\lambda_1,\dots, \lambda_k \in \R$ ja $\lambda_i\geq 0$, kaikilla $ i\in\N$ niin, että 
+$$f=\sum_{i=0}^k \lambda_i f_{a_i},\qquad \text{ missä } \sum_{i=0}^k \lambda_i =1.$$
+Nyt jollain $i\leq k$ pätee $\lambda_i \geq 1/(k+1)$. Tämä seuraa siitä, että jos $\lambda_i<1/(k+1)$ kaikilla $i\leq k$, niin
+$$\sum_{i=0}^k \lambda_i < \sum_{i=0}^k \dfrac{1}{k+1}=\dfrac{k+1}{k+1}=1,$$
+joka on ristiriidassa oletuksen $\sum_{i=0}^k \lambda_i =1$ kanssa.
+%Tällöin on ainakin yksi $i\leq k$, jolla $\lambda_i \geq 1/(k+1)$. Tämä seuraa siitä, että 
+%$$\sum_{i=0}^k \frac{1}{k+1}=k\cdot \dfrac{1}{k+1}=\dfrac{k}{k+1}<1 .$$ 
+%Tällöin voidaan vaihtaa $\lambda_0$ ja $\lambda_i$ keskenään ja vastaavasti $a_0$ ja $a_i$ keskenään, jolloin saadaan $\lambda_0\geq 1/(k+1)$. Jos jollain $i\neq j$ ja $i,j\leq k$ %ja $i,j\in \N$ 
+%pätee $ a_i=a_j$, niin on mahdollista valita uudet $$a_0,a_1,\dots a_i,\dots, a_{j-1},a_{j+1},\dots a_{k}$$ ja vastaavat $$\lambda_0,\lambda_1,\dots, (\lambda_i+\lambda_j),\dots ,\lambda_{j-1},\lambda_{j+1},\dots, \lambda_{k-1}.$$ 
+Voidaan siis valita sellaiset $a_0,a_1,\dots, a_k$, $\lambda_0,\lambda_1,\dots \lambda_k$, että 
+$$\lambda_0\geq \dfrac{1}{k+1}\text{ ja }f=\sum_{i=0}^k \lambda_i f_{a_i},\qquad \text{ missä } \sum_{i=0}^k \lambda_i =1 .$$ 
+Tällöin 
+$$||f-f_{x_n}||\geq |f(x_n)-f_{x_n}(x_n)|=|f(x_n)-d'(x_n,x_n)|=|f(x_n)|$$ 
+ja edelleen
+$$|f(x_n)|=\sum_{i=0}^k \lambda_i f_{a_i}(x_n)\geq \lambda_0 f_{a_0}(x_n)\geq \dfrac{1}{k+1}d(a_0,x_n).$$
+Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. \\
+Siis $ f=\lim_{n\rightarrow\infty} f_{x_n}=f_{a_0}\in hX$, joten $hX\subset C(hX)$ on suljettu.
 
 \end{proof}
 
@@ -557,7 +578,8 @@ Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim
 \begin{thebibliography}{9}
 
 \bibitem{Bor}
-Karol Borsuk: Theory of retracts, n.\ painos, Państwowe Wydawn. Naukowe, 1967.
+Karol Borsuk: Theory of retracts, %n.\ painos, 
+Państwowe Wydawn. Naukowe, 1967.
 
 \bibitem{Topo1}
 Jussi Väisälä: Topologia I, 4.\ korjattu painos, Limes ry, 2007.
