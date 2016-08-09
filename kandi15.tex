@@ -367,8 +367,8 @@ c_0 a+c_1 b \in C(A),\text{ kun }c_0,c_1\geq 0\text{ ja }c_0 +c_1=1.
 %Konveksi verho $C(A)$ on konveksi, joten kaikilla $x_0,x_1\in C(A)$ pätee $[x_0,x_1]\subset C(A)$, 
 %toisin sanoen, $(1-t)x_0+tx_1\in A$ kaikilla $0\leq t \leq 1$. 
 Olkoon $x_0,x_1,\dots, x_n, x_{n+1} \in A$, 
-$d_0,d_1,\dots, d_n,e, \lambda_{n+1} \in \R$ 
-ja $d_i,e, \lambda_{n+1}\geq 0$ kaikilla $ i\in\N$. 
+$d_0,d_1,\dots, d_n,e, \lambda_0 ,\lambda_1,\dots,\lambda_{n},\lambda_{n+1} \in \R$ 
+ja $d_i,e, \lambda_{i}\geq 0$ kaikilla $ i\in\N$. 
 %Tällöin erityisesti 
 %$\lambda_0 x_0+\lambda_1 x_1 \in C(A)$, kun $\lambda_0 +\lambda_1=1$.
 %\begin{equation}\lambda_0 x_0+\lambda_1 x_1 \in C(A),
@@ -378,6 +378,37 @@ Oletetaan, että jollain $n\geq 1$ pätee
 \begin{equation*}
 d_0 x_0+d_1 x_1+\cdots+d_{n} x_{n}\in C(A), \text{kun } d_0+d_1+\cdots+ d_{n} =1.
  \end{equation*}
+%
+%
+%
+%
+Olkoon $\lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1} =1$. Tällöin
+\begin{equation*}
+\begin{split}
+&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+\lambda_{n+1} x_{n+1}\\
+=&e\left(\frac{ \lambda_0}{e} x_0+\frac{ \lambda_1}{e} x_1+\cdots+\frac{ \lambda_n}{e} x_{n}\right) +\lambda_{n+1} x_{n+1}\in C(A)
+\end{split}
+%\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
+%\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
+%\sum_{i=0}^{n}{\lambda_i}=1
+\end{equation*}
+%
+%
+%
+Olkoon $\lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1} =1$. Tällöin
+\begin{equation*}
+\begin{split}
+&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+\lambda_{n+1} x_{n+1}\\
+=&(1-\lambda_{n+1})\left(\frac{ \lambda_0}{1-\lambda_{n+1}} x_0+\frac{ \lambda_1}{1-\lambda_{n+1}} x_1+\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} x_{n}\right) +\lambda_{n+1} x_{n+1}\in C(A)
+\end{split}
+%\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
+%\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
+%\sum_{i=0}^{n}{\lambda_i}=1
+\end{equation*}
+%
+%
+%
+%
 Tällöin konveksiuden ja kaavan \ref{konvsis} nojalla pätee 
 \begin{equation*}
 \begin{split}
@@ -395,6 +426,10 @@ kun $e+\lambda_{n+1} =1$. Valitsemalla $ed_i= \lambda_{i}$ kaikilla $i\in {0,1,\
 \sum_{i=0}^{n}{\lambda_i}=1
 \end{equation*} 
 olevat lineaarikombinaatiot. 
+%
+%
+%
+%
 Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota. 
 
 \end{proof}
