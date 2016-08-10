@@ -50,11 +50,18 @@
 
 \chapter{Johdanto}\label{johd}
 
-Tämän tutkielman tarkoituksena on todistaa Kuratowskin upotuslause. Lause on nimetty puolalaisen matemaatikon Kazimierz Kuratowskin mukaan. Osa lauseen todistuksesta on tehtävänä kurssikirjassa Topologia 1, joka on yksi matematiikan pääaineopiskelijoiden aineopintoja.
+Tämän tutkielman tarkoituksena on todistaa Kuratowskin upotuslause. Lause on nimetty puolalaisen matemaatikon Kazimierz Kuratowskin mukaan. Osa lauseen todistuksesta on tehtävänä kurssikirjassa Topologia I, joka on yksi matematiikan pääaineopiskelijoiden aineopintoja.
 \\
 \\
 Kazimierz Kuratowski (2.2.1896 - 18.6.1980) oli puolalainen matemaatikko, joka keskittyi tutkimuksessaan abstraktiin topologiaan ja metrisiin struktuureihin. 
- jne.. Luku \ref{normi}, ks.\ \cite{Topo1}
+Tohtorin tutkinnon hän suoritti vuonna 1921 Varsovan yliopistossa. Toisen maailmansodan aikana hän luennoi Varsovan maanalaisessa yliopistossa. Toisen maailmansodan jälkeen Kuratowski toimi aktiivisesti Puolan tiedeyhteisössä.
+Hänen merkittävimpiin töihinsä lukeutuvat Kuratowskin sulkeuma-aksioomat sekä Kuratowski-Zornin lemma.
+\\
+\\
+Kuratowskin upotuslauseen todistamiseen tarvitaan esityetoja vektoriavaruuksistaja metrisistä avaruuksista. 
+Tutkielmassa käydään läpi tarvittavat esitiedot ja keskeiset käsitteet kuten sup-normi, metrinen avaruus ja konveksi verho esitellään omissa luvuissaan.
+
+%Luku \ref{normi}, ks.\ \cite{Topo1}
 %Tämän tutkielman tarkoituksena on esitellä todennäköisyys- ja momenttigeneroivia
 %funktioita. Yleisesti generoiva funktio on hyödyllinen esimerkiksi kombinatoriikassa. 
 %Matematiikan yliopisto-opinnoissa generoivat funktiot tulevat yleensä ensimmäisen
@@ -109,8 +116,8 @@ Rajoitettujen funktioiden avaruus $Raj(D,\R )$ on reaaliarvoisten funktioiden ve
 \begin{proof}
  Olkoon $f,g\in Raj(D,\R),M,N\in\R, M,N\geq 0$ niin, että $|f(x)|\leq M$ ja $|g(x)|\leq N$ kaikilla $x\in D$. Tällöin seuraavat kohdat pätevät: 
 \begin{itemize}
-\item[i)\phantom{iiv}] $|f(x)+g(x)|\leq|f(x)|+|g(x)|\leq M+N\leq\infty$, siis $f+g\in Raj(D,\R)$ kaikilla $f,g\in Raj(D,\R),$
-\item[ii)\phantom{iv}] $|af(x)|= |a|\cdot|f(x)|\leq |a|\cdot M\leq\infty$, siis $af\in Raj(D,\R)$ kaikilla $a\in\R, f\in Raj(D,\R)$ ja
+\item[i)\phantom{iiv}] $|f(x)+g(x)|\leq|f(x)|+|g(x)|\leq M+N<\infty$, siis $f+g\in Raj(D,\R)$ kaikilla $f,g\in Raj(D,\R),$
+\item[ii)\phantom{iv}] $|af(x)|= |a|\cdot|f(x)|\leq |a|\cdot M<\infty$, siis $af\in Raj(D,\R)$ kaikilla $a\in\R, f\in Raj(D,\R)$ ja
 \item[iii)\phantom{v}] $0_{F(D,\R)}(x)=0$ kaikilla $x\in D$, jolloin $0_{F(D,\R)} \in Raj(D,\R )$.
 \end{itemize}
 \end{proof}
@@ -134,10 +141,15 @@ Määritellään joukossa $\R ^n$ tavallinen euklidinen normi $|x| = \sqrt{x^{2}
 \end{esim}
 
 \begin{maar}\label{sup-normi} \emph{Sup-normi}\\
-Olkoon $D$ epätyhjä joukko ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. Yhtälö $||f||=\sup\{|f(x)|\colon x\in D\}$ määrittelee normin avaruudessa $Raj(D,\R )$. %Normia $||\cdot||$ 
-Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
-
+Olkoon $D$ epätyhjä joukko ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. 
+Yhtälöä $||f||=\sup\{|f(x)|\colon x\in D\}$ sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
 \end{maar} 
+\begin{lause}
+%Olkoon $D$ epätyhjä joukko ja $Raj(D,\R )$ kaikkien avaruudessa $D$ määriteltyjen rajoitettujen funktioiden $f\colon D\rightarrow \R$ vektoriavaruus. 
+Määritelmän \ref{sup-normi} yhtälö $||f||=\sup\{|f(x)|\colon x\in D\}$ määrittelee normin avaruudessa $Raj(D,\R )$. %Normia $||\cdot||$ 
+%Tätä normia sanotaan avaruuden $Raj(D,\R )$ sup-normiksi.
+
+\end{lause} 
 
 \begin{proof}
 \begin{itemize}
@@ -170,7 +182,7 @@ Tapauksessa $D=\N$ saadaan kaikkien rajoitettujen jonojen joukko $raj(\N,\R).$ J
 
 
 \chapter{Metrinen avaruus}\label{metrinen}
-Tässä luvussa esitellään metristen avaruuksien ominaisuuksia. Metrisiä avaruuksia käsitellään syvemmin kirjassa Topologia I% \cite{Topo1} 
+Tässä luvussa esitellään metristen avaruuksien ominaisuuksia. Metrisiä avaruuksia käsitellään syvemmin kirjassa Topologia I.% \cite{Topo1}
 \begin{maar} \emph{Metrinen avaruus} 
 on pari $(X,d)$, jossa $X$ on joukko ja $d$ on \emph{metriikka} joukossa $X$.
 Tällöin $d\colon X\times X\rightarrow \R_+$ on kuvaus, jolle pätee seuraavat ominaisuudet kaikilla $x,y,z\in X$:
@@ -187,11 +199,12 @@ $$d(p,q)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+\dots+(p_n-q_n)^2}.$$
 \end{esim}
 
 \begin{esim}
-Normiavaruus on aina metrinen avaruus. 
+%Olkoon $E$ normiavaruus ja $x,y\in E$. 
+Normiavaruus $E$ on aina metrinen avaruus, kun metriikaksi valitaan $d(x,y)=|x-y|$ kaikilla $x,y\in E$. 
 
 \begin{proof}
-Olkoon $E$ normiavaruus ja $x,y\in E$. 
-Metriikaksi voidaan valita $d(x,y)=|x-y|$, jolloin kaikilla $x,y\in E$ pätee
+Olkoon $E$ normiavaruus. 
+Tällöin kaikilla $x,y\in E$ pätee
 \begin{itemize}
 \item[(M1)]%\begin{align*}
 $d(x,z)=|x-z|=|x-y+y-z|=|(x-y)+(y-z)|\leq|x-y|+|y-z|=d(x,y)+d(y,z)$
@@ -262,7 +275,9 @@ Peilaus, rotaatio ja siirtokuvaus ovat geometriasta tuttuja isometrioita avaruud
 Olkoon $(X,d)$ ja $(X',d')$ metrisiä avaruuksia ja olkoon kuvaus $h\colon X\rightarrow X'$ isometria. Tällöin $d(x_1,x_2)=d'(h(x_1),h(x_2))$ kaikilla $x_1,x_2 \in X$. Tällöin
 \begin{itemize}
 \item[(H1)] $h$ on määritelmän nojalla bijektio,
-\item[(H2)] Kaikilla $\epsilon>0$ on olemassa $\delta>0$, jolla pätee: Jos $d(x_1,x_2)<\epsilon$, niin $d'(h(x_1),h(x_2))=d(x_1,x_2)<\epsilon=\delta$. Siis $h$ on jatkuva.
+\item[(H2)] Kaikilla $\epsilon>0$ voidaan valita $\delta=\epsilon$, jolla pätee: Jos $d(x_1,x_2)<\delta$, niin 
+$$d'(h(x_1),h(x_2))=d(x_1,x_2)<\delta=\epsilon.$$
+Siis $h$ on jatkuva.
 \item[(H3)] Edellisen kohdan ja isometrisuuden nojalla myös $f^{-1} \colon Y\rightarrow X$ on jatkuva. 
 \end{itemize}
 \end{proof}
@@ -430,6 +445,7 @@ olevat lineaarikombinaatiot.
 %
 %
 %
+
 Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota. 
 
 \end{proof}
@@ -472,27 +488,27 @@ Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaariko
 %%\end{maar}
 %\end{proof}
 
-\chapter{Banachin avaruus}\label{Banach}
-
-\begin{maar}
-Kompakti joukko
-\end{maar}
-
-\begin{maar}\emph{Cauchyn jono} 
-Jono $(x_n\colon n\in \N$
-
-\end{maar}
-
-\begin{maar}Banachin avaruus on täydellinen normiavaruus.
-\end{maar}
-
-\begin{maar}\emph{Separoituva avaruus.} Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\dots\}=A\subset X$, toisin sanoen, jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.
-\end{maar}
-
-\begin{maar}
-\emph{Homotopia}\\
-Kaksi kuvausta ovat homotooppisia keskenään, jos ne voidaan muuntaa jatkuvalla kuvauksella toisikseen. Olkoon $f,g\colon X\rightarrow Y$. Sanomme kuvauksen $f$ olevan homotooppinen kuvauksen $g$ kanssa, jos on olemassa jatkuva $h\colon X \times I \rightarrow Y$, jolla $h(x,0)=f(x)$ ja $h(x,1)=g(x)$ kaikilla $x\in X$. Merkitsemme tällöin $f\simeq g$ ja $h\colon f\simeq g$. Kuvaus $h$ on homotopia, joka yhdistää kuvaukset $f$ ja $g$.
-\end{maar}
+%\chapter{Banachin avaruus}\label{Banach}
+%
+%\begin{maar}
+%Kompakti joukko
+%\end{maar}
+%
+%\begin{maar}\emph{Cauchyn jono} 
+%Jono $(x_n\colon n\in \N$
+%
+%\end{maar}
+%
+%\begin{maar}Banachin avaruus on täydellinen normiavaruus.
+%\end{maar}
+%
+%\begin{maar}\emph{Separoituva avaruus.} Olkoon $X$ metrinen avaruus ja $\mathcal{B}\subset \mathcal{P}( X)$ epätyhjien avointen osajoukkojen perhe. Tällöin avaruus $X$ on separoituva, jos seuraava ehto pätee: On olemassa numeroituva tiheä osajoukko $\{a_0,a_1,\dots\}=A\subset X$, toisin sanoen, jokaista $B\in\mathcal{B}$ kohti löytyy ainakin yksi $a_i\in A$, jolla $a_i\in B$ jollain $i\in \N$.
+%\end{maar}
+%
+%\begin{maar}
+%\emph{Homotopia}\\
+%Kaksi kuvausta ovat homotooppisia keskenään, jos ne voidaan muuntaa jatkuvalla kuvauksella toisikseen. Olkoon $f,g\colon X\rightarrow Y$. Sanomme kuvauksen $f$ olevan homotooppinen kuvauksen $g$ kanssa, jos on olemassa jatkuva $h\colon X \times I \rightarrow Y$, jolla $h(x,0)=f(x)$ ja $h(x,1)=g(x)$ kaikilla $x\in X$. Merkitsemme tällöin $f\simeq g$ ja $h\colon f\simeq g$. Kuvaus $h$ on homotopia, joka yhdistää kuvaukset $f$ ja $g$.
+%\end{maar}
 
 
 \chapter{Kuratowskin upotuslause}\label{kuratowski}
@@ -526,13 +542,15 @@ $$||f_{x_1} - f_{x_2} ||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )| \geq |d'(x_1 
 Toisaalta mielivaltaiselle $y\in X$ pätee
 $$|f_{x_1} (y)- f_{x_2} (y)|=|d'(x_1 ,y )-d'(x_2 ,y)|\leq d'(x_1 , x_2 ),$$
 jolloin siis $$||f_{x_1}-f_{x_2}||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )|\leq d'(x_1 , x_2 ).$$ Edeltävistä epäyhtälöistä saadaan $||f_{x_1}-f_{x_2}||= d'(x_1 , x_2 )$, jolloin kuvaus $h\colon X\rightarrow hX$  on isometria.
-Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X$, $x\neq x'$ pätee $$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_x' (x)$$ ja edelleen 
-$$h(x)=f_x \neq f_x'=h(x') .$$ 
+Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X$, $x\neq x'$ pätee 
+$$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_{x'} (x)$$ 
+ja edelleen 
+$$h(x)=f_x \neq f_{x'}=h(x') .$$ 
 Lemman \ref{isolemma} nojalla funktio $h$ on homeomorfismi kuvajoukolle $hX$.
 %\newpage
 
 Seuraavaksi osoitetaan, että $hX$ on suljettu konveksissa verhossa $C(hX)$. 
-Tavoitteena on osoittaa, että avaruuden $hX$ alkioista muodostuvan suppenevan jonon raja-arvo kuuluu avaruuteen $ hX$. 
+Tavoitteena on osoittaa, että avaruuden $hX$ alkioista muodostuvan ja joukossa $C(hX)$ suppenevan jonon raja-arvo kuuluu avaruuteen $ hX$. 
 Olkoon $f\in C(hX)$, $f_{x_i}\in hX$ ja $ x_i\in X$ kaikilla $ i\in \N$. 
 Oletetaan, että 
 $$f=\lim_{n\rightarrow\infty} f_{x_n}.$$ 
