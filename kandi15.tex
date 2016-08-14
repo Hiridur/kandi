@@ -344,7 +344,7 @@ Jokainen $A_i$ on konveksi, joten kaikilla $i\in J$ pätee $[a,b]\subset A_i$.
 Tällöin kaikilla $a,b\in C(A)$ pätee $[a,b] \subset C(A)$, joten konveksi verho $C(A)$ on konveksi.
 \end{proof}
 %%Tästä seuraa, että konveksi verho $C(A)$ on konveksi. \end{kor}
-\begin{kor}Konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.
+\begin{kor}\label{konv-pienin}Konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.
 \end{kor}
 %%Tällöin koska $C(A)=\bigcap_{j\in J} A_j$, niin $C(A)\subset A_i$ kaikilla $i\in J$. Tällöin konveksi verho $C(A)$ on pienin konveksi joukko, joka sisältää joukon $A$.
 \begin{proof} Olkoon $B$ sellainen konveksi joukko, jolla $A\subset B\subset C(A)$. 
@@ -446,8 +446,11 @@ olevat lineaarikombinaatiot.
 %
 %
 
-Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota. 
-
+%Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota. 
+Olkoon
+$$B= \left\lbrace\sum_{i=0}^{n}{\lambda_i x_i}\colon x_i\in A, \lambda_i\in \R, \lambda_i \geq 0 \text{ ja } \sum_{i=0}^{n}{\lambda_i }=1 \right\rbrace. $$
+Aiemman perusteella $ B\subset C(A)$. Osoitetaan, että joukko $C(A)\subset B$, jolloin $B=C(A)$.
+Joukko $B$ on konveksi (edellinen) ja $A\subset B$, jolloin korollaarin \ref{konv-pienin} nojalla $C(A)\subset B$.
 \end{proof}
 
 %\begin{proof} Osoitetaan ensin, että kaikki kyseistä muotoa olevat lineaarikombinaatiot kuuluvat konveksiin peitteeseen.
