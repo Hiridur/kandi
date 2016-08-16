@@ -207,9 +207,9 @@ Olkoon $E$ normiavaruus.
 Tällöin kaikilla $x,y\in E$ pätee
 \begin{itemize}
 \item[(M1)]%\begin{align*}
-$d(x,z)=|x-z|=|x-y+y-z|=|(x-y)+(y-z)|\leq|x-y|+|y-z|=d(x,y)+d(y,z)$
+$d(x,z)=|x-z|=|x-y+y-z|=|(x-y)+(y-z)|\leq|x-y|+|y-z|=d(x,y)+d(y,z)$,
 %\end{align*}
-\item[(M2)]$d(x,y)=|x-y|=|y-x|=d(y,x)$
+\item[(M2)]$d(x,y)=|x-y|=|y-x|=d(y,x)$ ja
 \item[(M3)]$d(x,y)=|x-y|=0$, jos ja vain jos $x=y$.
 \end{itemize}
 \end{proof}
@@ -332,13 +332,19 @@ B_{d'}(x,r')&=\{y\in X\colon d'(x,y)< r'\}\\
 \end{equation*}
 \end{proof}
 \end{lem}
-\begin{huom}\label{metrihuom}Lemmoissa  \ref{rajmetri} ja \ref{rajmetri2} hyödynnetään tietoa: $\dfrac{a}{a+1}< \dfrac{b}{b+1}$ jos ja vain jos  $a< b $.
-Jos $a< b$ niin $\frac{1}{a}> \frac{1}{b}$ ja edelleen
-$$\dfrac{a}{a+1}=\dfrac{a \cdot 1}{a(\frac{1}{a}+1)}=\dfrac{ 1}{\frac{1}{a}+1}< \dfrac{ 1}{\frac{1}{b}+1}=\dfrac{ b\cdot 1}{b(\frac{1}{b}+1)}=\dfrac{b}{b+1}.$$
-Toisaalta jos $\dfrac{a}{a+1}< \dfrac{b}{b+1}$ niin
-$\dfrac{ 1}{\frac{1}{a}+1}=\dfrac{a}{a+1}<\dfrac{b}{b+1}= \dfrac{ 1}{\frac{1}{b}+1}.$ ja edelleen $a< b$.
+\begin{huom}\label{metrihuom}Lemmoissa  \ref{rajmetri} ja \ref{rajmetri2} hyödynnetään tietoa: 
+$$a< b\text{ jos ja vain jos } \dfrac{a}{1+a}< \dfrac{b}{1+b}.$$
+
+\begin{proof}
+Jos $a< b$ niin $\frac{1}{b}< \frac{1}{a}$ ja edelleen
+$$\dfrac{a}{1+a}=\dfrac{a \cdot 1}{a(\frac{1}{a}+1)}=\dfrac{ 1}{\frac{1}{a}+1}< \dfrac{ 1}{\frac{1}{b}+1}=\dfrac{ b\cdot 1}{b(\frac{1}{b}+1)}=\dfrac{b}{1+b}.$$
+$$\text{Toisaalta jos }\dfrac{a}{1+a}< \dfrac{b}{1+b}\text{ niin }
+\dfrac{ 1}{\frac{1}{a}+1}=\dfrac{ a\cdot 1}{a(\frac{1}{a}+1)}=\dfrac{a}{1+a}<\dfrac{b}{1+b}=\dfrac{ b\cdot 1}{b(\frac{1}{b}+1)}= \dfrac{ 1}{\frac{1}{b}+1}.$$
+Tällöin $\frac{1}{b}<\frac{1}{a} $ ja edelleen $a< b.$\\
 %Merkit $<$ ja $>$ voidaan korvata $\leq$ ja $\geq$ merkeillä.
-Vastaavasti jos $a\leq b$ niin $\dfrac{a}{a+1}\leq \dfrac{b}{b+1}$ ja jos $\dfrac{a}{a+1}\leq \dfrac{b}{b+1}$ niin $a\leq b$.
+Vastaavasti $a\leq b$ jos, ja vain jos $\dfrac{a}{a+1}\leq \dfrac{b}{b+1}$.
+%Vastaavasti jos $a\leq b$ niin $\dfrac{a}{a+1}\leq \dfrac{b}{b+1}$ ja jos $\dfrac{a}{a+1}\leq \dfrac{b}{b+1}$ niin $a\leq b$.
+\end{proof}
 \end{huom}
 %\begin{lem}
 %Olkoon $(X,d)$ metrinen avaruus. 
