@@ -421,9 +421,9 @@ Konveksi verho $C(A)$ on konveksi ja $A\subset C(A)$,
 joten kaikilla $a,b\in A$ pätee $[a,b]\subset C(A)$, 
 toisin sanoen, $(1-t)a+tb\in C(A)$ kaikilla $0\leq t \leq 1$, 
 erityisesti 
-\begin{equation}\label{konvsis}
+\begin{equation*}\label{konvsis}
 c_0 a+c_1 b \in C(A),\text{ kun }c_0,c_1\geq 0\text{ ja }c_0 +c_1=1.
-\end{equation}
+\end{equation*}
 %Konveksi verho $C(A)$ on konveksi, joten kaikilla $x_0,x_1\in C(A)$ pätee $[x_0,x_1]\subset C(A)$, 
 %toisin sanoen, $(1-t)x_0+tx_1\in A$ kaikilla $0\leq t \leq 1$. 
 Olkoon $x_0,x_1,\dots, x_n, x_{n+1} \in A$, 
@@ -435,50 +435,65 @@ ja $d_i,e, \lambda_{i}\geq 0$ kaikilla $ i\in\N$.
 %\text{ kun } x_0,x_1\in C(A), \lambda_0, \lambda_1\geq 0\text{ ja } \lambda_0 +\lambda_1=1.
 %\end{equation}
 Oletetaan, että jollain $n\geq 1$ pätee 
-\begin{equation*}
+\begin{equation}\label{konvoletus}
 d_0 x_0+d_1 x_1+\cdots+d_{n} x_{n}\in C(A), \text{kun } d_0+d_1+\cdots+ d_{n} =1.
- \end{equation*}
+ \end{equation}
 %
 %
 %
 %
-Olkoon $\lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1} =1$. Tällöin
+%Olkoon $\lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1} =1$. Tällöin
+%\begin{equation*}
+%\begin{split}
+%&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+\lambda_{n+1} x_{n+1}\\
+%=&e\left(\frac{ \lambda_0}{e} x_0+\frac{ \lambda_1}{e} x_1+\cdots+\frac{ \lambda_n}{e} x_{n}\right) +\lambda_{n+1} x_{n+1}\in C(A)
+%\end{split}
+%%\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
+%%\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
+%%\sum_{i=0}^{n}{\lambda_i}=1
+%\end{equation*}
+%
+%
+%
+Olkoon 
+\begin{equation}\label{konvsumma}
+\begin{split}
+ \lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1}=1=&\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1}}{1}=\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{n}}{1- \lambda_{n+1}}\\
+ =&\frac{ \lambda_0}{1-\lambda_{n+1}} +\frac{ \lambda_1}{1-\lambda_{n+1}} +\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} .
+\end{split}
+\end{equation}
+Tällöin kaavojen \ref{konvoletus} ja \ref{konvsumma} nojalla
 \begin{equation*}
 \begin{split}
-&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+\lambda_{n+1} x_{n+1}\\
-=&e\left(\frac{ \lambda_0}{e} x_0+\frac{ \lambda_1}{e} x_1+\cdots+\frac{ \lambda_n}{e} x_{n}\right) +\lambda_{n+1} x_{n+1}\in C(A)
+\frac{ \lambda_0}{1-\lambda_{n+1}} x_0+\frac{ \lambda_1}{1-\lambda_{n+1}} x_1+\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} x_{n}\in C(A)
 \end{split}
 %\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
 %\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
 %\sum_{i=0}^{n}{\lambda_i}=1
 \end{equation*}
-%
-%
-%
-Olkoon $\lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1} =1$. Tällöin
+ja edelleen konveksiuden nojalla
 \begin{equation*}
 \begin{split}
 &\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+\lambda_{n+1} x_{n+1}\\
-=&(1-\lambda_{n+1})\left(\frac{ \lambda_0}{1-\lambda_{n+1}} x_0+\frac{ \lambda_1}{1-\lambda_{n+1}} x_1+\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} x_{n}\right) +\lambda_{n+1} x_{n+1}\in C(A)
-\end{split}
-%\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
-%\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
-%\sum_{i=0}^{n}{\lambda_i}=1
-\end{equation*}
-%
-%
-%
-%
-Tällöin konveksiuden ja kaavan \ref{konvsis} nojalla pätee 
-\begin{equation*}
-\begin{split}
-&e(d_0 x_0+d_1 x_1+\cdots+d_{n}x_n)+\lambda_{n+1} x_{n+1}\\
-=&e d_0 x_0+e d_1 x_1+\cdots+e d_{n}x_n+\lambda_{n+1} x_{n+1}
-\in C(A),
+=&(1-\lambda_{n+1})\left(\frac{ \lambda_0}{1-\lambda_{n+1}} x_0+\frac{ \lambda_1}{1-\lambda_{n+1}} x_1+\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} x_{n}\right) +\lambda_{n+1} x_{n+1} \in C(A)
 \end{split}
 \end{equation*}
-kun $e+\lambda_{n+1} =1$. Valitsemalla $ed_i= \lambda_{i}$ kaikilla $i\in {0,1,\dots,n}$ saadaan $$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+ \lambda_{n+1} x_{n+1}
-\in C(A).$$ Siis $C(A)$ sisältää kaikki muotoa 
+%
+%
+%
+%
+%Tällöin konveksiuden ja kaavan \ref{konvsis} nojalla pätee 
+%\begin{equation*}
+%\begin{split}
+%&e(d_0 x_0+d_1 x_1+\cdots+d_{n}x_n)+\lambda_{n+1} x_{n+1}\\
+%=&e d_0 x_0+e d_1 x_1+\cdots+e d_{n}x_n+\lambda_{n+1} x_{n+1}
+%\in C(A),
+%\end{split}
+%\end{equation*}
+%kun $e+\lambda_{n+1} =1$. Valitsemalla $ed_i= \lambda_{i}$ kaikilla $i\in {0,1,\dots,n}$ saadaan 
+%$$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+ \lambda_{n+1} x_{n+1}
+%\in C(A).$$ 
+Siis $C(A)$ sisältää kaikki muotoa 
 \begin{equation*}
 \lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},
 \quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
