@@ -434,9 +434,9 @@ ja $d_i,e, \lambda_{i}\geq 0$ kaikilla $ i\in\N$.
 %\begin{equation}\lambda_0 x_0+\lambda_1 x_1 \in C(A),
 %\text{ kun } x_0,x_1\in C(A), \lambda_0, \lambda_1\geq 0\text{ ja } \lambda_0 +\lambda_1=1.
 %\end{equation}
-Oletetaan, että jollain $n\geq 1$ pätee 
+Oletetaan, että jollain $k\in\N,k\geq 1$ pätee 
 \begin{equation}\label{konvoletus}
-d_0 x_0+d_1 x_1+\cdots+d_{n} x_{n}\in C(A), \text{kun } d_0+d_1+\cdots+ d_{n} =1.
+d_0 x_0+d_1 x_1+\cdots+d_{k} x_{k}\in C(A), \text{kun } d_0+d_1+\cdots+ d_{k} =1.
  \end{equation}
 %
 %
@@ -458,24 +458,24 @@ d_0 x_0+d_1 x_1+\cdots+d_{n} x_{n}\in C(A), \text{kun } d_0+d_1+\cdots+ d_{n} =1
 Olkoon 
 \begin{equation}\label{konvsumma}
 \begin{split}
- \lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1}=1=&\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{n}+ \lambda_{n+1}}{1}=\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{n}}{1- \lambda_{n+1}}\\
- =&\frac{ \lambda_0}{1-\lambda_{n+1}} +\frac{ \lambda_1}{1-\lambda_{n+1}} +\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} .
+ \lambda_0+\lambda_1+\cdots+ \lambda_{k}+ \lambda_{k+1}=1=&\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{k}+ \lambda_{k+1}}{1}=\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{k}}{1- \lambda_{k+1}}\\
+ =&\frac{ \lambda_0}{1-\lambda_{k+1}} +\frac{ \lambda_1}{1-\lambda_{k+1}} +\cdots+\frac{ \lambda_k}{1-\lambda_{k+1}} .
 \end{split}
 \end{equation}
 Tällöin kaavojen \ref{konvoletus} ja \ref{konvsumma} nojalla
 \begin{equation*}
 \begin{split}
-\frac{ \lambda_0}{1-\lambda_{n+1}} x_0+\frac{ \lambda_1}{1-\lambda_{n+1}} x_1+\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} x_{n}\in C(A)
+\frac{ \lambda_0}{1-\lambda_{k+1}} x_0+\frac{ \lambda_1}{1-\lambda_{k+1}} x_1+\cdots+\frac{ \lambda_k}{1-\lambda_{k+1}} x_{k}\in C(A)
 \end{split}
 %\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
-%\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
-%\sum_{i=0}^{n}{\lambda_i}=1
+%\lambda_0+\lambda_1+\cdots+ \lambda_{k} =1
+%\sum_{i=0}^{k}{\lambda_i}=1
 \end{equation*}
 ja edelleen konveksiuden nojalla
 \begin{equation*}
 \begin{split}
-&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+\lambda_{n+1} x_{n+1}\\
-=&(1-\lambda_{n+1})\left(\frac{ \lambda_0}{1-\lambda_{n+1}} x_0+\frac{ \lambda_1}{1-\lambda_{n+1}} x_1+\cdots+\frac{ \lambda_n}{1-\lambda_{n+1}} x_{n}\right) +\lambda_{n+1} x_{n+1} \in C(A)
+&(1-\lambda_{k+1})\left(\frac{ \lambda_0}{1-\lambda_{k+1}} x_0+\frac{ \lambda_1}{1-\lambda_{k+1}} x_1+\cdots+\frac{ \lambda_k}{1-\lambda_{k+1}} x_{k}\right) +\lambda_{k+1} x_{k+1}\\
+=&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{k} x_{k}+\lambda_{k+1} x_{k+1}\in C(A)
 \end{split}
 \end{equation*}
 %
@@ -493,24 +493,42 @@ ja edelleen konveksiuden nojalla
 %kun $e+\lambda_{n+1} =1$. Valitsemalla $ed_i= \lambda_{i}$ kaikilla $i\in {0,1,\dots,n}$ saadaan 
 %$$\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}+ \lambda_{n+1} x_{n+1}
 %\in C(A).$$ 
-Siis $C(A)$ sisältää kaikki muotoa 
+Siis $C(A)$ sisältää kaikki muotoa% lineaarikombinaatiot, jotka ovat muotoa
 \begin{equation*}
 \lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n},
 \quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
 %\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
 \sum_{i=0}^{n}{\lambda_i}=1
 \end{equation*} 
-olevat lineaarikombinaatiot. 
-%
+olevat lineaarikombinaatiot.
 %
 %
 %
 
-%Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan kyseisiä lineaarikombinaatiota. 
-Olkoon
-$$B= \left\lbrace\sum_{i=0}^{n}{\lambda_i x_i}\colon x_i\in A, \lambda_i\in \R, \lambda_i \geq 0 \text{ ja } \sum_{i=0}^{n}{\lambda_i }=1 \right\rbrace. $$
-Aiemman perusteella $ B\subset C(A)$. Osoitetaan, että joukko $C(A)\subset B$, jolloin $B=C(A)$.
-Joukko $B$ on konveksi (edellinen) ja $A\subset B$, jolloin korollaarin \ref{konv-pienin} nojalla $C(A)\subset B$.
+%Osoitetaan seuraavaksi, että $C(A)$ sisältää ainoastaan tätä muotoa olevia lineaarikombinaatiota. 
+Olkoon $B$ kyseisten lineaarikombinaatioiden joukko ja olkoon $x\in B$ ja $y\in B$. 
+Tällöin on olemassa sellaiset $x_i,y_i\in A, \lambda_i,\lambda_i'\geq0$, $\sum_{i=0}^{n}{\lambda_i}=1$ ja $\sum_{i=0}^{m}{\lambda_i'}=1$, joilla
+\begin{equation*}
+x=\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{n} x_{n}\text{ ja }y=\lambda_0' y_0+\lambda_1' y_1+\cdots+\lambda_{m}' y_{m}.
+%\quad\text{missä } x_i\in A, \lambda_i\geq0\text{, ja }
+%\lambda_0+\lambda_1+\cdots+ \lambda_{n} =1
+%\sum_{i=0}^{n}{\lambda_i}=1.
+\end{equation*} 
+Tällöin myös mielivaltaisella $0\leq t \leq 1$ pätee
+\begin{equation*}
+\begin{split}
+ (1-t)x+ty=&(1-t)(\lambda_0 x_0+\cdots+\lambda_{n} x_{n})+t(\lambda_0' y_0 +\cdots+\lambda_{m}' y_{m})\\
+=&(1-t)\lambda_0 x_0+\cdots+(1-t)\lambda_{n} x_{n}+t\lambda_0' y_0+\cdots+t\lambda_{m}' y_{m}\in B,
+\end{split}
+\end{equation*} 
+Siis joukko $B$ on konveksi.
+Lisäksi kaikilla $a\in A$ pätee $a=1\cdot a \in B$, joten $A\subset B$. Nyt siis joukko $B$ on konveksi ja $A\subset B$, joten korollaarin \ref{konv-pienin} nojalla $C(A)\subset B$.
+%Siis joukko $A\subset B
+%
+%Olkoon
+%$$B= \left\lbrace\sum_{i=0}^{n}{\lambda_i x_i}\colon x_i\in A, \lambda_i\in \R, \lambda_i \geq 0 \text{ ja } \sum_{i=0}^{n}{\lambda_i }=1 \right\rbrace. $$
+%Aiemman perusteella $ B\subset C(A)$. Osoitetaan, että joukko $C(A)\subset B$, jolloin $B=C(A)$.
+%Joukko $B$ on konveksi (edellinen) ja $A\subset B$, jolloin korollaarin \ref{konv-pienin} nojalla $C(A)\subset B$.
 \end{proof}
 
 %\begin{proof} Osoitetaan ensin, että kaikki kyseistä muotoa olevat lineaarikombinaatiot kuuluvat konveksiin peitteeseen.
