@@ -58,7 +58,7 @@ Tohtorin tutkinnon hän suoritti vuonna 1921 Varsovan yliopistossa. Toisen maail
 Hänen merkittävimpiin töihinsä lukeutuvat Kuratowskin sulkeuma-aksioomat sekä Kuratowski-Zornin lemma.
 \\
 \\
-Kuratowskin upotuslauseen todistamiseen tarvitaan esityetoja vektoriavaruuksistaja metrisistä avaruuksista. 
+Kuratowskin upotuslauseen todistamiseen tarvitaan esitietoja vektoriavaruuksista ja metrisistä avaruuksista. 
 Tutkielmassa käydään läpi tarvittavat esitiedot ja keskeiset käsitteet kuten sup-normi, metrinen avaruus ja konveksi verho esitellään omissa luvuissaan.
 
 %Luku \ref{normi}, ks.\ \cite{Topo1}
@@ -114,10 +114,10 @@ Rajoitettujen funktioiden avaruus $Raj(D,\R )$ on reaaliarvoisten funktioiden ve
 \end{lem}
 %\noindent
 \begin{proof}
- Olkoon $f,g\in Raj(D,\R),M,N\in\R, M,N\geq 0$ niin, että $|f(x)|\leq M$ ja $|g(x)|\leq N$ kaikilla $x\in D$. Tällöin seuraavat kohdat pätevät: 
+ Olkoon $f,g\in Raj(D,\R),M,N\in\R, M,N\geq 0$ niin, että $|f(x)|\leq M$ ja ${|g(x)|\leq N}$ kaikilla $x\in D$. Tällöin seuraavat kohdat pätevät: 
 \begin{itemize}
 \item[i)\phantom{iiv}] $|f(x)+g(x)|\leq|f(x)|+|g(x)|\leq M+N<\infty$, siis $f+g\in Raj(D,\R)$ kaikilla $f,g\in Raj(D,\R),$
-\item[ii)\phantom{iv}] $|af(x)|= |a|\cdot|f(x)|\leq |a|\cdot M<\infty$, siis $af\in Raj(D,\R)$ kaikilla $a\in\R, f\in Raj(D,\R)$ ja
+\item[ii)\phantom{iv}] $|af(x)|= |a|\cdot|f(x)|\leq |a|\cdot M<\infty$, siis $af\in Raj(D,\R)$ kaikilla $a\in\R$, ${f\in Raj(D,\R)}$ ja
 \item[iii)\phantom{v}] $0_{F(D,\R)}(x)=0$ kaikilla $x\in D$, jolloin $0_{F(D,\R)} \in Raj(D,\R )$.
 \end{itemize}
 \end{proof}
@@ -165,8 +165,7 @@ kaikilla $x\in D$, joten $||f+g||=\sup\{|f(x)+g(x)|\}\leq||f||+||g||$.
 |af|(x)=|af(x)|=|a||f(x)|\leq|a|||f||
 \end{equation*}
 kaikilla $x\in D$, joten $||af||\leq|a|||f||$. Jos $a=0$, niin (N2) pätee muodossa $0=0$. %$$||af||=||0\cdot f||=0=|0|||f||=|a|||f||.$$ 
-Jos $a\neq 0$, niin $f=a^{-1}af$ ja edellisen
-%yhtälön $\ref{N2todistus1}$ 
+Jos $a\neq 0$, niin $f=a^{-1}af$ ja edellisen yhtälön %$\ref{N2todistus1}$ 
 mukaan $||f||\leq|a^{-1}|||af||$
 %$$|f|(x)=|a^{-1}af|(x)=|a^{-1}af(x)|=|a^{-1}||af(x)|\leq|a^{-1}|||af(x)||.$$
 ja edelleen $||af||\geq|a|||f||$ kaikilla $x\in D$. Tällöin siis $||af||=|a|||f||$.
@@ -227,10 +226,11 @@ Olkoon $(X,d)$ metrinen avaruus, $x,y\in X$ ja $A\subset X$ epätyhjä. Tällöi
 
 \begin{proof}
  %Aputulos: $b+\inf\{a\in A\}=\inf\{b+a\colon a\in A\}$\\
-Olkoon $a\in A$. Tällöin kaikilla $y\in A$ pätee $d(x,A)\leq d(x,a)\leq d(x,y)+d(y,a)$. Ottamalla infimum kaikkien $a\in A$ yli saadaan $d(x,A)\leq d(x,y)+d(y,A)$
+Olkoon $a\in A$. Tällöin kaikilla $y\in A$ pätee ${d(x,A)\leq d(x,a)\leq d(x,y)+d(y,a)}$. Ottamalla infimum kaikkien $a\in A$ yli saadaan $d(x,A)\leq d(x,y)+d(y,A)$
 %\begin{equation*}\begin{split} d(x,A)=&\inf\{d(x,b)\colon b\in A\}\leq\inf\{d(x,y)+d(y,b)\colon b\in A\}\\=&d(x,y)+\inf\{d(y,b)\colon b\in A\}=d(x,y)+d(y,A)\end{split}\end{equation*}
 ja edelleen $d(x,A)-d(y,A)\leq d(x,y) $.
-Vastaavasti olkoon $y\in A$, jolloin kaikilla $x\in X$ pätee $d(y,A)-d(x,A)\leq d(y,x)=d(x,y) $. Nyt $d(x,A)-d(y,A)\leq d(x,y) $ ja $d(y,A)-d(x,A)\leq d(x,y) $, jolloin siis $|d(x,A)-d(y,A)|\leq d(x,y) $.
+Vastaavasti olkoon $y\in A$, jolloin kaikilla $x\in X$ pätee ${d(y,A)-d(x,A)\leq d(y,x)=d(x,y) }$. 
+Nyt $d(x,A)-d(y,A)\leq d(x,y) $ ja\\ ${d(y,A)-d(x,A)\leq d(x,y) }$, jolloin siis $|d(x,A)-d(y,A)|\leq d(x,y) $.
 
 \end{proof}
 
@@ -456,10 +456,13 @@ d_0 x_0+d_1 x_1+\cdots+d_{k} x_{k}\in C(A), \text{kun } d_0+d_1+\cdots+ d_{k} =1
 %
 %
 Olkoon 
+$\lambda_0+\lambda_1+\cdots+ \lambda_{k}+ \lambda_{k+1}=1$, 
+jolloin $\lambda_0+\lambda_1+\cdots+ \lambda_{k}=1- \lambda_{k+1}$ 
+ja edelleen 
 \begin{equation}\label{konvsumma}
 \begin{split}
- \lambda_0+\lambda_1+\cdots+ \lambda_{k}+ \lambda_{k+1}=1=&\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{k}+ \lambda_{k+1}}{1}=\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{k}}{1- \lambda_{k+1}}\\
- =&\frac{ \lambda_0}{1-\lambda_{k+1}} +\frac{ \lambda_1}{1-\lambda_{k+1}} +\cdots+\frac{ \lambda_k}{1-\lambda_{k+1}} .
+1=\frac{\lambda_0+\lambda_1+\cdots+ \lambda_{k}}{1- \lambda_{k+1}}
+ =\frac{ \lambda_0}{1-\lambda_{k+1}} +\frac{ \lambda_1}{1-\lambda_{k+1}} +\cdots+\frac{ \lambda_k}{1-\lambda_{k+1}} .
 \end{split}
 \end{equation}
 Tällöin kaavojen \ref{konvoletus} ja \ref{konvsumma} nojalla
@@ -475,7 +478,7 @@ ja edelleen konveksiuden nojalla
 \begin{equation*}
 \begin{split}
 &(1-\lambda_{k+1})\left(\frac{ \lambda_0}{1-\lambda_{k+1}} x_0+\frac{ \lambda_1}{1-\lambda_{k+1}} x_1+\cdots+\frac{ \lambda_k}{1-\lambda_{k+1}} x_{k}\right) +\lambda_{k+1} x_{k+1}\\
-=&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{k} x_{k}+\lambda_{k+1} x_{k+1}\in C(A)
+=&\lambda_0 x_0+\lambda_1 x_1+\cdots+\lambda_{k} x_{k}+\lambda_{k+1} x_{k+1}\in C(A).
 \end{split}
 \end{equation*}
 %
@@ -520,7 +523,17 @@ Tällöin myös mielivaltaisella $0\leq t \leq 1$ pätee
  (1-t)x+ty=&(1-t)(\lambda_0 x_0+\cdots+\lambda_{n} x_{n})+t(\lambda_0' y_0 +\cdots+\lambda_{m}' y_{m})\\
 =&(1-t)\lambda_0 x_0+\cdots+(1-t)\lambda_{n} x_{n}+t\lambda_0' y_0+\cdots+t\lambda_{m}' y_{m}\in B,
 \end{split}
-\end{equation*} 
+\end{equation*}
+sillä
+\begin{equation*}
+\begin{split}
+&(1-t)\lambda_0 +(1-t)\lambda_1 +\cdots+(1-t)\lambda_{n} +t\lambda_0' +t\lambda_1' +\cdots+t\lambda_{m}' \\
+=& (1-t)(\lambda_0 +\lambda_1 +\cdots+\lambda_{n} )+t(\lambda_0'  +\lambda_1'  +\cdots+\lambda_{m}' )
+= (1-t)+t=1
+\end{split}
+\end{equation*}
+%sillä $(1-t)\lambda_0 +\cdots+(1-t)\lambda_{n} +t\lambda_0' +\cdots+t\lambda_{m}' =
+% (1-t)(\lambda_0 +\cdots+\lambda_{n} )+t(\lambda_0'  +\cdots+\lambda_{m}' )$
 Siis joukko $B$ on konveksi.
 Lisäksi kaikilla $a\in A$ pätee $a=1\cdot a \in B$, joten $A\subset B$. Nyt siis joukko $B$ on konveksi ja $A\subset B$, joten korollaarin \ref{konv-pienin} nojalla $C(A)\subset B$.
 %Siis joukko $A\subset B
@@ -622,7 +635,13 @@ $$h(x)=f_x\, ,\qquad x\in X. $$  Tällöin pätee
 $$||f_{x_1} - f_{x_2} ||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )| \geq |d'(x_1 , x_2 )-d'(x_2 , x_2 )|=d'(x_1 ,x_2 ).$$ 
 Toisaalta mielivaltaiselle $y\in X$ pätee
 $$|f_{x_1} (y)- f_{x_2} (y)|=|d'(x_1 ,y )-d'(x_2 ,y)|\leq d'(x_1 , x_2 ),$$
-jolloin siis $$||f_{x_1}-f_{x_2}||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )|\leq d'(x_1 , x_2 ).$$ Edeltävistä epäyhtälöistä saadaan $||f_{x_1}-f_{x_2}||= d'(x_1 , x_2 )$, jolloin kuvaus $h\colon X\rightarrow hX$  on isometria.
+jolloin siis 
+$$||f_{x_1}-f_{x_2}||=\sup_{x\in X} |d'(x_1 , x )-d'(x_2 , x )|\leq d'(x_1 , x_2 ).$$ 
+Edeltävistä epäyhtälöistä saadaan 
+\begin{equation}
+\label{normimetri}||f_{x_1}-f_{x_2}||= d'(x_1 , x_2 ),\quad  x_1,x_2 \in X,
+\end{equation}
+jolloin kuvaus $h\colon X\rightarrow hX$  on isometria.
 Funktio $h$ on bijektio, sillä kaikilla $x,x'\in X$, $x\neq x'$ pätee 
 $$ f_x (x)=d'(x,x)=0\neq d'(x',x)=f_{x'} (x)$$ 
 ja edelleen 
@@ -651,7 +670,9 @@ Tällöin
 $$||f-f_{x_n}||\geq |f(x_n)-f_{x_n}(x_n)|=|f(x_n)-d'(x_n,x_n)|=|f(x_n)|$$ 
 ja edelleen
 $$|f(x_n)|=\sum_{i=0}^k \lambda_i f_{a_i}(x_n)\geq \lambda_0 f_{a_0}(x_n)\geq \dfrac{1}{k+1}d(a_0,x_n).$$
-Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. \\
+Tällöin yhtälöstä $\lim_{n\rightarrow\infty} f_{x_n}=f$ seuraa, että $\lim_{n\rightarrow\infty }x_n=a_0$. 
+Tällöin yhtälön \ref{normimetri} nojalla
+$||f_{x_n} - f_{a_0} ||=d'(x_n ,a_0 )=0,\text{ kun }n\rightarrow \infty.$
 Siis $ f=\lim_{n\rightarrow\infty} f_{x_n}=f_{a_0}\in hX$, joten $hX\subset C(hX)$ on suljettu.
 
 \end{proof}
